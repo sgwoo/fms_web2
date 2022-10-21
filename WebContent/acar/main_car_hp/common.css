@@ -1,0 +1,716 @@
+@charset "euc-kr";
+/* CSS Document */
+
+/* font */
+
+@font-face{
+font-family:"Nanum Gothic";
+font-style:normal;
+font-weight:normal;
+src:url('../font/NanumGothic.eot');
+src:local('※'),
+	url('../font/NanumGothic.eot?#iefix') format('embedded-opentype'),
+	url('../font/NanumGothic.woff') format('woff');
+}
+
+@font-face{
+font-family:"Nanum Gothic Bold";
+font-style:normal;
+font-weight:900;
+src:url('../font/NanumGothicBold.eot');
+src:local('※'),
+	url('../font/NanumGothicBold.eot?#iefix') format('embedded-opentype'),
+	url('../font/NanumGothicBold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:    url('../font/icomoon.eot?22b95b');
+    src:    url('../font/icomoon.eot?22b95b#iefix') format('embedded-opentype'),
+        url('../font/icomoon.ttf?22b95b') format('truetype'),
+        url('../font/icomoon.woff?22b95b') format('woff'),
+        url('../font/icomoon.svg?22b95b#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+html{height:100%}
+body{width:100%; height:100%;background-color:#F2F2F2;overflow-x:hidden;-webkit-user-select:none;-webkit-text-size-adjust:none; text-shadow:none;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,select,textarea,p,blockquote,th,td,legend,button{margin:0;padding:0;color:#000;font-family: 'Nanum Barun Gothic', 'Nanum Gothic', sans-serif;font-weight:normal;font-size:16px;line-height: 1.25em;-webkit-text-size-adjust:none;}/*사파리 회전시 폰트 크기 고정하기*/
+form,fieldset,img{border:0}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+
+table{border-spacing:0;border-collapse:collapse}
+hr,legend,caption{display:none}
+img,fieldset,button{border:0 none}
+ul,ol,li{list-style:none outside}
+img,input,select,textarea{vertical-align:middle}
+textarea{-webkit-border-radius:0;-webkit-appearance:none}
+select{padding:0 0 0 6px;letter-spacing:0;-webkit-border-radius:0;-webkit-appearance:none}
+a{text-decoration:none;color:#3b3b3b}
+a:link,a:hover,a:active{text-decoration:none}
+li,p,dt,dd,div,span{word-break:break-all}
+article{padding:10px; background-color:#f2f2f2;}
+
+a{text-decoration:none;}
+a img {padding:0px; margin:0px;}
+a:link,a:visited,a:active {text-decoration:none}
+
+/*상단*/
+#logo {width:100%;float:left;height:63px; border-bottom:1px solid #d4d4d4; background-color:#FFFFFF;margin:0px; padding:0px;}
+#logo h1 {margin:0 auto; padding-top:16px; text-align:center;font-size:1.3em;}
+#logo h1.lbg {width:110px;margin:0 auto; padding-top:14px;background:url(/mobile/images/logo.png) no-repeat 0 100%;background-size:100%;}
+#logo h1.lbg a {position:static;display:block;width:110px; height:31px;}
+#logo h1.lbg a img {height:31px; }
+
+#logo h1.lbg1 {width:110px;margin:0 auto; padding-top:14px;background:url(/mobile/images/logow.png) no-repeat 0 100%;background-size:100%;}
+#logo h1.lbg1 a {position:static;display:block;width:110px; height:31px;}
+#logo h1.lbg1 a img {height:31px; }
+
+
+#logo a.amenu {position: absolute; top: 5px; padding:15px;display:block;}
+#logo a.tel	  {position:absolute; left:auto; right:0; top:7px; display: block; padding:15px;}
+#logo a.login {position:absolute; left:auto; right:45px; top:15px; display: block; margin:0px;}
+#logo a.smart {position:absolute; left:auto; right:37px; top:15px; display: block; margin:0px;}
+
+
+#logo a.lo {position:absolute; left:auto; right:112px; top:20px; display: block;}
+#logo a.mp {position:absolute; left:auto; right:15px; top:18px; display: block;}
+#logo a.cv {position:absolute; left:auto; right:0px; top:20px; display: block;}
+
+
+/*서브상단*/
+#title{width:100%;float:left;height:53px; border-bottom:1px solid #b4b4b4; background-color:#d4d5d4; padding:0px; text-align:center;}
+#title h1{font-size:1.3em; padding-top:14px; font-weight:bold;}
+#title a.amenu {position: absolute;left:10px; right:auto; top:8px;display: block;background:url(/mobile/images/btn_allmenu.gif) transparent center no-repeat 100%;background-size:37px; }
+#title a.home {position:absolute; top: 13px;right:10px; display: block; margin:0px;}
+#title a.back {position:absolute; top: -5px;left:0px; display: block; margin:0px; padding:10px;}
+
+
+
+
+/*메인메뉴*/
+#main {padding:0px; margin:0px auto; background-color:#f7f7f7; }
+
+
+#slider {float:left; position:relative; overflow:auto; width:750px; height:857px;}
+#slider ul {position:absolute; list-style:none; top:0; left:30px; }
+#slider li {float:left; width:750px; height:857px; padding-right:10px}
+
+.pagination {float:left; list-style:none; height:25px; margin:0 auto; width:100%;}
+.pagination li {float:left; cursor:pointer; padding:5px 8px; background:#666; border:1px solid #999; margin:0 4px 0 0; text-align:center; color:#222}
+.pagination li:hover {background:#777; border:1px solid #bbb; color:#000}
+li.current {border:1px solid #ccc; background:#888}
+
+
+#main ul{ overflow:hidden; width:100%;}
+#main ul li{float:Left;width:48%;line-height:0;padding:5px 2px 5px 4px; margin:0px;}
+#main ul li a{display: block; }
+#main li a img{width:100%;}
+
+
+/*서브메뉴*/
+#smenu { padding:0; margin:0 auto; width:100%;background-color:#f2f2f2;}
+#smenu ul {width:100%; overflow:hidden; margin:0 auto; height:50px; border-bottom:1px solid #cccccc;}
+#smenu ul li{float:left; padding:15px 20px; text-align:center; background:url(/mobile/images/smenu_vline.gif)no-repeat right; background-size:1px 20px;}
+#smenu ul li.text{padding:7px 20px; background:url(/mobile/images/smenu_vline.gif)no-repeat right; background-size:1px 30px;}
+#smenu ul li.text1{padding:7px 15px; background:url(/mobile/images/smenu_vline.gif)no-repeat right; background-size:1px 30px;}
+#smenu ul li:last-child{background:none;}
+
+
+/*서브내용*/
+#cont {padding:10px; margin:0px auto;}
+
+#bar {border-bottom:1px solid #cccccc; padding:5px 10px;}
+h1 {font-size:1.2em;padding:0 5px; line-height:1.4; font-weight:bold;}
+h2 {padding:3px 0 8px 0; line-height:1.4;} 
+h2.n{padding:3px 0 0 0;}
+h3 {font-size:0.95em; padding:0 0 0 10px;}
+h3.num {padding:0 0 0 2px;}
+
+
+/*상품안내 서브테이블*/
+.type01 ul{ width:100%; border-radius:10px 10px 10px 10px; }
+.type01 ul li{float:left;  background-color:#ffffff; padding:12px 0 12px 15px; font-size:0.9em;}
+.type01 ul li.tl{border-radius:10px 0 0 0; border:1px solid #cccccc; border-bottom:none; width:48%;}
+.type01 ul li.tr{border-radius:0 10px 0 0; border:1px solid #cccccc; border-left:none; border-bottom:none; width:40%; }
+.type01 ul li.bl{border-radius:0 0 0 10px; border:1px solid #cccccc; clear:both; width:48%;}
+.type01 ul li.br{border-radius:0 0 10px 0; border:1px solid #cccccc;border-left:none; width:40%;}
+
+
+
+/*메인 상품*/
+.prd {width:100%;background:#ffffff;text-align:center;}
+.prd .top{background:#27a60a;}
+.prd .t{color:#ffffff;font-size:1.5em;}
+
+
+/*전화상담*/
+.tel_num{
+	position:relative;
+	background-color: #ffffff;
+	border: 2px solid #ddd;
+	margin:7px 0;
+	padding:20px 0px 20px 20px;
+
+}
+.tel_num ul{width:100%; overflow:hidden;}
+.tel_num ul li{float:left;width:50%;}
+
+/*아마존카 회사소개*/
+.cmp {position:relative; width:100%;background:url(/mobile/images/main_bg.jpg)center top no-repeat; background-size:100%;padding:10px;margin:0 auto;}
+.cmp ul{width:80%; overflow:hidden; margin:15px auto;}
+.cmp ul li{float:left; width:30%; color:#ffffff; vertical-align:middle;}
+.cmp ul li.text{width:70%; color:#ffffff; padding:23px 0 0 0; height:100%; vertical-align:middle;}
+.cmp.line{background-color:#ffffff; height:1px;}
+.cmp p{color:#ffffff; text-align:center; padding:15px 15px 0 15px;}
+
+/*스마트견적*/
+.est_info  {border:1px solid #c5c5c5; border-radius:10px; background-color:#ffffff;}
+.est_info table {width:100%;border:none; margin:0px; border-radius:10px;}
+.est_info table th{font-size:15px;background-color:#efefef; padding:10px; border-bottom:1px solid #c5c5c5; border-radius:10px 10px 0 0; border-top:none;,border-right:none;,border-left:none;font-weight:bold;}
+.est_info table td{border:none;   padding:3px 10px 0 0; font-weight:normal; border-radius:10px;}
+.est_info table td.title01 {border-bottom:1px solid #cccccc; border-right:1px solid #cccccc; padding:15px; width:50%; text-align:center; border-radius:10px 0 0 0;}
+.est_info table td.est{padding:0 10px 3px 15px;}
+.est_info table td.est_d{padding:0 10px 7px 30px;}
+
+/*제리스소개*/
+.sh_info  {border:1px solid #c5c5c5; border-radius:10px; background-color:#ffffff;}
+.sh_info table {width:100%;border:none; margin:0px; border-radius:10px;}
+.sh_info table th{font-size:10px;background-color:#efefef; padding:10px; border-bottom:1px solid #c5c5c5; border-radius:10px 10px 0 0; border-top:none;,border-right:none;,border-left:none;font-weight:bold;}
+.sh_info table td{border:none; font-size:13px;   padding:3px 10px 0 0; font-weight:normal; border-radius:10px;}
+
+
+
+/*하단 따라다니는 메뉴*/
+#mmenu {float:left; width:100%; position: fixed; bottom: 0px; background-color:#434343; padding-top:5px;}
+#mmenu ul{overflow:hidden; }
+#mmenu ul li{float:left; line-height:35px; padding:0px; text-align:center; vertical-align:bottom; width:20%;}
+#mmenu ul li.text{font-size:11px; line-height:17px;  height:16px; color:#fff; opacity:0.75; vertical-align:top; padding:0px; margin:5px 0 10px 0;  border-top:none; font-weight:bold;}
+#mmenu ul li.text a{color:#000000;opacy:.65;}
+#mmenu ul li img{width:100%; margin:0px; padding:0px;}
+
+
+/* 폰트칼라 */
+.point{color:#ff3d00; font-weight:bold;}
+.point1{color:#27a60a; font-weight:bold;}
+.black{color:#000000;}
+.red{color:#e10202;}
+.white{color:#ffffff;}
+.vline{color:#e1e1e1;}
+.line{background-color:#cccccc; height:1px;}
+
+/* 폰트크기 */
+
+.f1{font-size:0.9em;}
+.f2{font-size:1.1em;}
+.f3{font-size:0.8em;}
+.f4{font-size:0.7em;}
+
+/* 폰트굵기 & 정렬 */
+.bold{font-weight:bold;}
+.nml{font-weight:normal;}
+.b05{height:5px;}
+.b10{height:10px;}
+.b20{height:20px;}
+.b30{height:30px;}
+.b35{height:35px;}
+.center{text-align:center;}
+.right{text-align:right; padding-right:5px;}
+.left{text-align:left;}
+
+
+/* 버튼 */
+.btn_type01{display:block; height:30px; background-color:#50af31; border-bottom:none; font-size:17px; color:#fff; font-weight:bold; 
+			text-align:center; border-radius:3px; width:100%; padding-top:10px; text-decoration:none;}
+.btn_type01 a{text-decoration:none;}
+.btn_type02{display:block; height:30px; background-color:#50af31; border-bottom:none; font-size:17px; color:#fff; font-weight:bold;
+			text-align:center; border-radius:3px; padding:5px 10px; text-decoration:none;}
+.btn_type02 a{text-decoration:none;}
+input.btn_type02 {border-top:none; border-left:none; border-right:none;}
+.btn_type03 {background-color:#50af31; border-bottom:none; font-size:12px; color:#fff; font-weight:bold; text-align:center; 
+			padding:5px 10px; border-radius:3px; text-decoration:none;}
+.btn_type03 a{text-decoration:none;}
+input.btn_type03 {border-top:none; border-left:none; border-right:none;}
+.btn_type04{display:inline-block;border:1px solid #27a60a; border-radius:25px;color:#27a60a; width:50%;}
+.btn_type04 span{display:block;border:1px solid #fff;border-radius:25px;background:#ffffff;font-size:17px;color:#27a60a;line-height:2.0em;font-weight:bold;}
+.btn_type05{display:inline-block;border:2px solid #27a60a; border-radius:25px;color:#27a60a; width:85%; margin-top:10px;}
+.btn_type05 span{display:block;border-radius:25px;background:#ffffff;font-size:16px;color:#27a60a;line-height:2.2em;font-weight:bold;}
+.btn_type06{display:inline-block;border:2px solid #27a60a; border-radius:25px;color:#27a60a; margin-top:10px;}
+.btn_type06 span{display:block;border-radius:25px;background:#ffffff;font-size:16px;color:#27a60a;line-height:2.2em;font-weight:bold; padding:0 60px;}
+.btn_type07{display:inline-block;border:1px solid #27a60a; border-radius:25px;color:#27a60a; padding:0 30Px;}
+.btn_type07 span{display:block;border:1px solid #fff;border-radius:25px;background:#ffffff;font-size:17px;color:#27a60a;line-height:2.0em;font-weight:bold;}
+
+
+/* input type */
+input.num			{ text-align:right; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:1; }
+input.whitenum		{ text-align:right; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; width:90%; margin:0px;padding:0px;}
+input.whitenum1		{ text-align:right; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; width:90%; color:#ff3d00;margin:0px;padding:0px;}
+input.text      	{ font-size : 9pt; text-align:left; background-color:#ffffff; border-color:#000000; border-width:1; }
+input.whitetext		{ text-align:left; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+
+
+/* TOP 버튼 */
+.btnTop{display:none; position:fixed; bottom:13%; right:20px;  padding:5px 10px; 
+overflow:hidden; color:#fff; text-align:center; background:#000; border-radius:5px; opacity:.4;}   
+
+
+/*panel menu*/
+.ui-panel-inner {
+	position: absolute;
+	top: 1px;
+	left: 0;
+	right: 0;
+	bottom: 0px;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+	}
+.image-fill {width: 100%;}
+
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+/* jssor slider bullet navigator skin 01 css */
+/*
+.jssorb01 div           (normal)
+.jssorb01 div:hover     (normal mouseover)
+.jssorb01 .av           (active)
+.jssorb01 .av:hover     (active mouseover)
+.jssorb01 .dn           (mousedown)
+*/
+.jssorb01 {
+    position: absolute;
+}
+.jssorb01 div, .jssorb01 div:hover, .jssorb01 .av {
+    position: absolute;
+    /* size of bullet elment */
+    width: 12px;
+    height: 12px;
+    filter: alpha(opacity=70);
+    opacity: .7;
+    overflow: hidden;
+    cursor: pointer;
+    border: #000 1px solid;
+}
+.jssorb01 div { background-color: gray; }
+.jssorb01 div:hover, .jssorb01 .av:hover { background-color: #d3d3d3; }
+.jssorb01 .av { background-color: #fff; }
+.jssorb01 .dn, .jssorb01 .dn:hover { background-color: #555555; }
+
+/* jssor slider arrow navigator skin 02 css */
+/*
+.jssora02l                  (normal)
+.jssora02r                  (normal)
+.jssora02l:hover            (normal mouseover)
+.jssora02r:hover            (normal mouseover)
+.jssora02l.jssora02ldn      (mousedown)
+.jssora02r.jssora02rdn      (mousedown)
+*/
+.jssora02l, .jssora02r {
+    display: block;
+    position: absolute;
+    /* size of arrow element */
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    background: url('img/a02.png') no-repeat;
+    overflow: hidden;
+}
+.jssora02l { background-position: -3px -33px; }
+.jssora02r { background-position: -63px -33px; }
+.jssora02l:hover { background-position: -123px -33px; }
+.jssora02r:hover { background-position: -183px -33px; }
+.jssora02l.jssora02ldn { background-position: -3px -33px; }
+.jssora02r.jssora02rdn { background-position: -63px -33px; }
+
+
+.allmenu{float:left;width:100%; padding:0px;}
+.allmenu ul.icon{width:100%; border-bottom:1px solid #cccccc; height:80px; background-color:#FFFFFF;}
+.allmenu ul.icon li{float:left;  width:33%;text-align:center;padding:15px 0 0 0;}
+.allmenu ul.icon li a{ display:block;}
+.allmenu ul.icon li.t{clear:both; padding:0px;}
+.allmenu ul.icon li.t1{padding:0px;}
+.allmenu ul.mmenu {margin-bottom:60px;}
+.allmenu ul.mmenu li {background-color:#F2F2F2; border-bottom:1px solid #cccccc;}
+.allmenu ul.mmenu li a{font-weight:normal; color:#333333; display:block;padding:15px 20px;  min-width:130px;}
+.allmenu ul.etc {float:left; width:100%; border-top:1px solid #999999; border-bottom:1px solid #999999; }
+.allmenu ul.etc li{float:left; width:100%;text-align:center;border-right:1px solid #999999;}
+.allmenu ul.etc li:last-child {border-right: none; }
+.allmenu ul.etc li a{color:#333333; font-size:14px; font-weight:normal;padding:8px 0; display:block;}
+.btm{float:left;}
+address{color:#666666; padding:10px; font-style:normal; margin-top:10px; min-width:240px;}
+address p{color:#666666;padding:10px 0;}
+
+
+
+/*글리픽콘*/
+
+.icon-menu:before {
+    content: "\e900";
+    color:#000000;
+    font-size:22px;
+    opacity: .5;
+}
+
+.icon-mypage:before {
+    content: "\e901";
+    color:#000000;
+    font-size:28px;
+    opacity: .5;
+}
+
+
+.icon-tel:before {
+    content: "\e903";
+    color:#50af31;
+    font-size:32px;
+}
+
+.icon-login:before {
+    content: "\f023";
+    color:#50af31;
+    font-size:34px;
+}
+.icon-logout:before {
+    content: "\f13e";
+    color:#50af31;
+    font-size:34px;
+}
+
+.icon-est:before {
+    content: "\e902";
+    color:#50af31;
+    font-size:29px;
+}
+
+
+.icon-back:before {
+    content: "\f104";
+    color:#898989;
+    font-size:42px;
+}
+
+.icon-home:before {
+    content: "\f015";
+    color:#898989;
+    font-size:33px;
+}
+.icon-main:before {
+    content: "\f015";
+    color:#50af31;
+    font-size:34px;
+}
+
+.icon-rarrow:before {
+    content: "\f138";
+    color:#50af31;
+    font-size:24px;
+    vertical-align:-5px;
+}
+
+.icon-phone:before {
+    content: "\f095";
+	color:#50af31;
+	font-size:30px;
+}
+
+.icon-car_01:before {
+    content: "\e906";
+    color:#4fc229;
+    font-size:23px;
+}
+
+.icon-car_02:before {
+    content: "\e90d";
+    color:#4fc229;
+    font-size:26px;
+}
+
+
+.icon-car_03:before {
+    content: "\e90b";
+    color:#4fc229;
+    font-size:23px;
+}
+.icon-mrent:before {
+    content: "\e905";
+    color:#4fc229;
+    font-size:30px;
+}
+
+.icon-smart:before {
+    content: "\e90c";
+    color:#4fc229;
+    font-size:30px;
+}
+
+.icon-income_stat:before {
+    content: "\e907";
+    color:#4fc229;
+    font-size:32px;
+}
+
+.icon-phone-square:before {
+    content: "\f098";
+    color:#50af31;
+    font-size:22px;
+    vertical-align:-4px;
+}
+
+.icon-phone-square1:before {
+    content: "\f098";
+    color:#50af31;
+    font-size:37px;
+}
+
+.icon-pencil-square:before {
+    content: "\f14b";
+    color:#50af31;
+    font-size:37px;
+}
+
+.icon-search-plus:before {
+    content: "\f00e";
+    font-size:20px;
+    color:#999999;
+}
+
+.icon-search-plus1:before {//돋보기 크게
+     content: "\f00e";
+    color:#000000;
+    font-size:37px;
+    opacity: .5;
+}
+
+.icon-menu01:before {
+    content: "\e90f";
+    color:#ffffff;
+    opacity: .5;
+    font-size:30px;
+     vertical-align:bottom;
+}
+
+
+
+.icon-menu02:before {
+    content: "\e910";
+     color:#ffffff;
+     opacity: .5;
+    font-size:30px;
+      vertical-align:bottom;
+}
+.icon-menu03:before {
+    content: "\e911";
+    color:#ffffff;
+    opacity: .5;
+    font-size:26px;
+    vertical-align:bottom;
+}
+.icon-menu04:before {
+    content: "\e912";
+    color:#ffffff;
+    opacity: .5;
+    font-size:28px;
+     vertical-align:bottom;
+}
+.icon-menu05:before {
+    content: "\e908";
+    color:#ffffff;
+    opacity: .5;
+    font-size:30px;
+     vertical-align:bottom;
+}
+.on:before{
+    color:#27a60a;
+    opacity:1;
+}
+
+.icon-smenu01:before {
+    content: "\e913";
+    color:#9fa0a0;
+    font-size:40px;
+
+}
+
+.icon-smenu02:before {
+    content: "\e90e";
+    color:#9fa0a0;
+    font-size:40px;
+
+}
+
+.icon-smenu03:before {
+    content: "\e914";
+    color:#9fa0a0;
+    font-size:38px;
+
+}
+
+.icon-smenu04:before {
+    content: "\e915";
+    color:#9fa0a0;
+    font-size:38px;
+
+}
+
+.icon-heart:before {
+    content: "\f004";
+    color:#ff6e40;
+    font-size:18px;
+    vertical-align:-3px;
+}
+
+.icon-image:before {
+    content: "\f1c5";
+    color:#27a60a;
+    font-size:18px;
+    vertical-align:-3px;
+}
+
+.icon-file:before {
+    content: "\f016";
+    color:#27a60a;
+    font-size:18px;
+    vertical-align:-3px;
+}
+
+.icon-battery:before {
+    content: "\e918";
+    color:#27a60a;
+    font-size:35px;
+}
+
+.icon-fuel:before {
+    content: "\e917";
+    color:#27a60a;
+    font-size:40px;
+}
+
+.icon-tire:before {
+    content: "\e919";
+    color:#27a60a;
+    font-size:43px;
+}
+
+.icon-tow:before {
+    content: "\e916";
+    color:#27a60a;
+    font-size:38px;
+}
+.icon-etc:before {
+    content: "\e91a";
+	color:#27a60a;
+    font-size:30px;
+}
+
+
+
+/*다음지도 스타일*/
+.customoverlay {position:relative;border-radius:6px;border: 1px solid #cc0c00;border-bottom:2px solid #ddd;float:left;}
+.customoverlay:nth-of-type(n) {border:0; box-shadow:0px 1px 2px #888;}
+.customoverlay a {display:block;text-decoration:none;color:#000;text-align:center;border-radius:6px;font-size:14px;;overflow:hidden;background: #d95050;background: #22B500 url(http://i1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center;}
+.customoverlay .title {display:block;text-align:center;background:#fff;margin-right:35px;padding:5px 10px;font-size:14px;}
+.customoverlay .title b {font-size:1.3em;}
+.customoverlay:after {content:'';position:absolute;margin-left:-12px;left:50%;bottom:-12px;width:22px;height:12px;background:url('http://i1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+/*다음지도 스타일 끝*/
+
+
+/*hamgurger 메뉴*/
+
+#navbar {
+  max-width: 1000px;
+  margin: 0px;
+}
+
+.menubtn {
+  /* needs positioning for z-index http://stackoverflow.com/a/10600930/477958 */
+  position: absolute; 
+  top: 5px;
+  left:0px;
+  padding: 15px;
+}
+
+.menubtn:hover, .openmenu .menubtn {
+  color: #bdd43e;
+}
+
+/** toggle menu **/
+body.openmenu {
+  position: fixed;
+  overflow: hidden;
+}
+
+#pgcontainer {
+  padding: 45px 0;
+  margin: 0;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 99;
+  background-color: rgba(0,0,0,0.5);
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.openmenu .overlay {
+  top: 0;
+}
+
+#hamburgermenu {
+  height: 100%;
+  width: 0;
+  background: #f2f2f2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  overflow: scroll;
+-webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-box-shadow: 3px 0 7px rgba(0,0,0,0.55);
+  -moz-box-shadow: 3px 0 7px rgba(0,0,0,0.55);
+  box-shadow: 3px 0 7px rgba(0,0,0,0.55);
+  text-align:left;
+}
+
+#hamburgermenu ul {
+  z-index: 101;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+
+#hamburgermenu ul li a {
+  display: block;
+  min-width: 100px;
+}
+
+

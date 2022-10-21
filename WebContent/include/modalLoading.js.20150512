@@ -1,0 +1,97 @@
+
+var modalopenCnt = 0;
+var eObj = null;
+
+function setLoadingLayer(){
+	
+	modalopenCnt = 0;
+	var loading = true;
+	
+	
+	var deniedUrl = [
+		"/emp_top.jsp"
+		,"/emp_menu.jsp"
+		,"/amazoncar.jsp"
+		,"_sh.jsp"
+	];
+	var url = location.href;
+	for( var i=0; i < deniedUrl.length; i++ ){
+		if( url.indexOf(deniedUrl[i]) != -1 ){
+			loading = false;
+			break;
+		}
+	}
+	
+	if( loading ){
+		var modalCnt = 0;
+		var target = null;
+		
+		if(typeof getModalCnt != "undefined"){
+			modalCnt = getModalCnt();
+			setModalCnt();
+		}
+				
+		
+		var obj = document.getElementById("modal_bg");
+		
+		if( obj == null && modalCnt <= 0 ){
+			var div = document.createElement("div");
+			var img = document.createElement("img");
+			var style = document.createElement("style");
+			
+			
+			div.setAttribute("class","modal_bg");
+			div.setAttribute("name","modal_bg");
+			div.setAttribute("id","modal_bg");
+			img.setAttribute("src","/images/viewLoading.gif");
+			var styleTxt = " .modal_bg {position:absolute ;top:0;left:0;z-index:100;width:100%;height:100%;background-color:rgba(0,0,0,.5); text-align: center; line-height: 1em;  } .modal_bg img { top: 50%;left: 50%; position: absolute; display: inline-block; margin-top: 24px; } ";
+			
+			style.setAttribute("type", "text/css");  
+		    if(style.styleSheet){  
+		    	style.styleSheet.cssText = styleTxt;  
+		    }else{// the world  
+		    	style.appendChild(document.createTextNode(styleTxt));  
+		    }  
+		    
+			div.appendChild(img);
+		    target = document.getElementsByTagName("html");
+		    
+		    target[0].appendChild(style);
+		    target[0].appendChild(div);
+
+			if( target != null && target.length > 0 ){
+				eObj = target[0].getElementsByTagName("div");
+				eObj = eObj[0];
+			}
+			
+		}else{
+			eObj = obj;
+		}
+		
+		if( eObj != null ){
+			eObj.style.display = "block";			
+			
+			window.onload = function(){
+				eObj.style.display = "none";		
+			};
+		}		
+		
+	}	
+	
+}
+
+function getModalCnt(){
+	return modalopenCnt;
+}
+
+function setModalCnt(){
+	modalopenCnt++;
+}
+
+function hideBlindLayer(){
+	if( eObj != null ){
+		eObj.style.display = "none";
+		modalopenCnt = 0;
+		eObj = null;
+	}
+}

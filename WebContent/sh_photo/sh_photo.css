@@ -1,0 +1,24 @@
+@import url(//cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css);
+@font-face {
+  font-family: 'Nanum Square';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fms2/menu/font/NanumSquareR.eot);
+  src: local('Nanum Square Regular'),
+       local('NanumSquareR'),
+       url(../fms2/menu/font/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+       url(../fms2/menu/font/NanumSquareR.woff2) format('woff2'),
+       url(../fms2/menu/font/NanumSquareR.woff) format('woff'),
+       url(../fms2/menu/font/NanumSquareR.ttf) format('truetype');
+}
+*{
+	font-family:'Nanum Barun Gothic';
+}
+.container{
+	padding:20px;
+}
+
+span.sh-photo-title{
+	font-size:18px;
+	font-weight:bold;
+}

@@ -1,0 +1,29 @@
+function OpenAmazonCAR(arg,end_dt,cur_dt,id,attend_dt,loan_st){
+	var SUBWIN = '';
+	
+
+	//정상
+	if(arg=='1'){
+		
+		//비밀번호 유효기간 이내 -> 메인페이지 이동
+//		if(end_dt > cur_dt){
+		
+			location.href="https://fms3.amazoncar.co.kr/smart/main.jsp";	
+
+		//비밀번호 유효기간 경과 -> 비밀번호 변경 페이지 팝업
+//		}
+		
+		
+	//에러
+	}else if(arg=='4'){
+		alert('데이터베이스 오류입니다. 잠시후 다시 시도하십시오!!');	
+		return;
+	}else if(arg=='3'){
+	//	alert('데이터베이스 오류입니다. 잠시후 다시 시도하십시오!!');	
+	//	return;	
+	}else {
+		alert('등록된 사용자가 아닙니다. 확인하세요!!');
+		return;
+			
+	}	
+}

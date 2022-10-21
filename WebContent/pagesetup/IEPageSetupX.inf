@@ -1,0 +1,11 @@
+; IE 인쇄 페이지 설정 컨트롤
+; Copyright (c) 2003, http://isulnara.com
+
+[Add.Code]
+IEPageSetupX.ocx=IEPageSetupX.ocx
+
+[IEPageSetupX.ocx]
+file=thiscab
+clsid={41C5BC45-1BE8-42C5-AD9F-495D6C8D7586}
+RegisterServer=yes
+FileVersion=1,0,18,0

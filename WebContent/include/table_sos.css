@@ -1,0 +1,103 @@
+body.general		{ background-color:#FFFFFF; font-family: ±¼¸², Gulim, AppleGothic, Seoul, Arial; font-size: 9pt;}
+
+a:link				{ font-family: ±¼¸², Gulim, AppleGothic, Seoul, Arial; text-decoration:underline; font-size:7pt; }
+a:hover				{ font-family: ±¼¸², Gulim, AppleGothic, Seoul, Arial; color:red; text-decoration:underline; font-size:7pt; }
+a:visited			{ font-family: ±¼¸², Gulim, AppleGothic, Seoul, Arial; color:blue; text-decoration:none; font-size:7pt; }
+
+/*°í¿¬¹Ì--------------------------------------------------------------------------------------------------*/
+
+.style1 {color: #666666}
+.style2 {color: #515150; font-weight: bold;}
+.style3 {color: #b3b3b3; font-size: 11px;}
+.style4 {color: #737373; font-size: 11px;}
+.style5 {color: #ef620c; font-weight: bold;}
+.style6 {color: #4ca8c2; font-weight: bold;}
+.style7 {color: #666666; font-size: 11px;}
+
+
+td		   	 		{ font-family: DOTUM; background-color:#ffffff; color:#000000; font-size:6pt; height:14;}
+td.b	            { font-family: DOTUM; background-color:#FFFFFF; color:#000000; font-size:6pt; vertical-align:middle; height:11;}
+td.h                { height:9;}
+td.title 		    { font-family: DOTUM; background-color:#e6e5e5; color:#000000; height:13; font-size:6pt; text-align:center; vertical-align:middle;}
+td.title_p 		    { font-family: DOTUM; background-color:#e2fff8; color:#398573; height:11; font-size:6pt; text-align:center; vertical-align:middle; font-weight:bold;}
+td.title_g          { font-family: DOTUM; background-color:#f0f0f0; color:#303030; height:11; font-size:6pt; text-align:center; vertical-align:middle; font-weight:bold;}
+td.title_num 		{ font-family: DOTUM; text-align:right; background-color:#6784ba ; font-size:7pt; color:white; height:9; vertical-align:middle;}
+td.bar 		        { font-family: DOTUM; background: url(/acar/images/center/menu_bar_bg.gif); height:9; font-size:7pt; vertical-align:middle; padding-top: 5px;}
+td.g                { font-family: DOTUM; background-color:#f0f0f0; color:#303030; font-size:7pt; vertical-align:middle; height:9;}
+td.m                { font-family: DOTUM; color:#303030; font-size:7pt; height:9;}
+
+td.line 			{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; background-color:#313131; vertical-align:middle;}
+td.line2 			{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; background-color:#b0baec; vertical-align:middle; height:2;}
+input.text      	{ font-size : 9pt; text-align:left; border:1 solid #acacac; background-color:#ffffff; font-family: DOTUM; color:#303030;}
+input.text_p      	{ font-size : 9pt; text-align:left; border:1 solid #909090; background-color:#fcf5c8; font-family: DOTUM; color:#303030;}
+input.whitetext		{ text-align:left; font-size : 9pt; background-color:#ffffff; border-color:##ffffff; border-width:0; color:#303030; }
+input.num			{ text-align:right; font-size : 9pt; border:1 solid #f9bc43; background-color:#ffffff;}
+input.defaultnum	{ font-size : 9pt; text-align:right; background-color:#fdf3d6 ; border:1 solid #f9bc43;}
+input.default 		{ font-size : 9pt; text-align:left; background-color:#f2f2f2 ; border:1 solid #b3b3b3;}
+
+
+select.default	  	{ font-size : 9pt; background-color:#EAF1FF ; color:#616161;}
+select      		{ font-size : 9pt; color:#616161;}
+
+B.sub { font:9pt µ¸¿ò; color:#666666;font-weight:bold;};
+  B.b { font:10pt ±¼¸², µ¸¿ò; color:#8E8E8E;font-weight:bold;};
+  B.c { font:9pt ±¼¸², µ¸¿ò; color:#CB5555;font-weight:bold;};
+  B.d { font:8pt ±¼¸², µ¸¿ò; color:#666666; line-height: 14pt;};
+  B.f { font:9pt ±¼¸², µ¸¿ò; color:#33AAF7; line-height: 14pt;};
+  B.g { font:9pt ±¼¸², µ¸¿ò; color:#737373; line-height: 14pt;};
+  B.h { font:9pt ±¼¸², µ¸¿ò; color:#705A8E; line-height: 14pt;};
+ B.edu { font:9pt ±¼¸², µ¸¿ò; color:#666666; line-height: 14pt;};
+
+
+
+input.white      	{ font-size : 9pt; text-align:center; background-color:#ffffff; border-color:#ffffff; border-width:0;}
+input.t_color      	{ font-size : 9pt; text-align:center;background-color:#E7EFFF; border-color:#ffffff; border-width:0;}
+input.dont      	{ font-size : 9pt; text-align:left; background-color:#E7EFFF; border-color:#000000; border-width:0; width:45px; height:20;}
+input.is      		{ font-size : 9pt; text-align:left; background-color:#ffffff; border-color:#000000; border-width:0; width:45px;  height:20;}
+
+input.isnum			{ text-align:right; font-size : 9pt; background-color:#ffffe8; border-color:#000000; border-width:0;}
+input.isnum2		{ text-align:right; font-size : 7pt; background-color:#ffffe8; border-color:#000000; border-width:0;}
+input.isnumsee		{ text-align:right; font-size : 9pt; background-color:#ffffe8; border-color:#000000; border-width:1;}
+input.whitenum		{ text-align:right; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.whitenum2		{ text-align:right; font-size : 7pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.rednum		{ font-size : 9pt; text-align:right; color:#7F0900; background-color:#EAF1FF ; border-color:#000000; border-width:1;}
+input.blanknum		{ text-align:right; background-color:#6784ba; border-color:#000000; border-width:0; color:white; font-size: 9pt;}
+input.fixnum 		{ font-size : 9pt; text-align:right; background-color:#CCCCCC ; border-color:#000000; border-width:0;}
+
+
+
+input.text_ce      	{ font-size : 9pt; text-align:center; background-color:#ffffff; border-color:##616161; border-width:1; }
+input.istext		{ font-size : 9pt; text-align:center; background-color:#ffffe8; border-color:##616161; border-width:0;}
+
+input.redtext		{ text-align:left; font-size : 9pt; color:red; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.chktext		{ text-align:left; font-size : 9pt; color:#7F0900; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.fix	 		{ font-size : 9pt; text-align:left; background-color:#CCCCCC ; border-color:#000000; border-width:0;}
+input.default 		{ font-size : 9pt; text-align:left; background-color:#f2f2f2 ; border:1 solid #b3b3b3;}
+
+input.blank			{ text-align:left; background-color:#6784ba; border-color:##616161; border-width:0; color:white; font-size: 9pt;}
+input.whiteblank	{ text-align:left; background-color:#ffffff; border-color:##616161; border-width:0; color:white; font-size: 9pt;}
+
+select.default	  	{ font-size : 9pt; background-color:#EAF1FF ; color:#616161;}
+select      		{ font-size : 9pt; color:#616161;}
+option     	 		{ font-size : 9pt;}
+
+textarea.white		{ font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+textarea.default	{ font-size : 9pt; background-color:#EAF1FF; border-color:#000000; border-width:1; }
+textarea   	 		{ font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:1; }
+textarea.b  		{ font-size : 9pt; color:red; background-color:#CCCCCC; border-color:#000000; border-width:1; }
+
+td.est	 			{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; text-align:center; background-color:#E7EFFF ; font-size:7pt; color:black; font-weight:bold; height:9; vertical-align:middle;}
+
+
+td.result 			{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; background-color:#E7EFFF; vertical-align:middle;}
+td.star 			{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; background-color:#6799ba; font-size:7pt; color:white; height:9; vertical-align:middle;}
+td.is				{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; background-color:#ffffe8; font-size:7pt; color:black; height:9;}
+td.is2				{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; background-color:#CCCCCC; font-size:7pt; color:black; height:9;}
+
+input.taxtext   	{ font-size : 9pt; text-align:left;  background-color:#CCCCCC; border-color:#0166a9; border-width:1; }
+input.taxnum    	{ font-size : 9pt; text-align:right; background-color:#CCCCCC; border-color:#0166a9; border-width:1; }
+input.titletext		{ font-size : 9pt; text-align:left;  background-color:#6784ba; border-color:#000000; border-width:0; }
+input.btn 			{ font-size:9pt; height:16px; color:#ffffff; background-color:#666666; border:1 solid #333333; cursor:hand; text-align:center; vertical-align:middle;}
+
+
+

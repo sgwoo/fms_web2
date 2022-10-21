@@ -1,0 +1,103 @@
+body.general		{ background-color:#FFFFFF; font-family: ±º∏≤, Gulim, AppleGothic, Seoul, Arial; font-size: 9pt;}
+
+a:link				{ font-family: ±º∏≤, Gulim, AppleGothic, Seoul, Arial; text-decoration:underline; font-size:9pt; }
+a:hover				{ font-family: ±º∏≤, Gulim, AppleGothic, Seoul, Arial; color:red; text-decoration:underline; font-size:9pt; }
+a:visited			{ font-family: ±º∏≤, Gulim, AppleGothic, Seoul, Arial; color:blue; text-decoration:none; font-size:9pt; }
+
+input.white      	{ font-size : 9pt; text-align:center; background-color:#ffffff; border-color:#ffffff; border-width:0;}
+input.t_color      	{ font-size : 9pt; text-align:center;background-color:#E7EFFF; border-color:#ffffff; border-width:0;}
+input.dont      	{ font-size : 9pt; text-align:left; background-color:#E7EFFF; border-color:#000000; border-width:0; width:45px; height:20;}
+input.is      		{ font-size : 9pt; text-align:left; background-color:#ffffff; border-color:#000000; border-width:0; width:45px;  height:20;}
+
+input.num			{ text-align:right; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:1; }
+input.isnum			{ text-align:right; font-size : 9pt; background-color:#ffffe8; border-color:#000000; border-width:0;}
+input.isnum2		{ text-align:right; font-size : 8pt; background-color:#ffffe8; border-color:#000000; border-width:0;}
+input.isnumsee		{ text-align:right; font-size : 9pt; background-color:#ffffe8; border-color:#000000; border-width:1;}
+input.whitenum		{ text-align:right; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.whitenum2		{ text-align:right; font-size : 8pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.rednum		{ font-size : 9pt; text-align:right; color:#7F0900; background-color:#EAF1FF ; border-color:#000000; border-width:1;}
+input.blanknum		{ text-align:right; background-color:#6784ba; border-color:#000000; border-width:0; color:white; font-size: 9pt;}
+input.fixnum 		{ font-size : 9pt; text-align:right; background-color:#CCCCCC ; border-color:#000000; border-width:0;}
+input.defaultnum	{ font-size : 9pt; text-align:right; background-color:#EAF1FF ; border-color:#000000; border-width:1;}
+
+input.text      	{ font-size : 9pt; text-align:left; background-color:#ffffff; border-color:#000000; border-width:1; }
+input.text_ce      	{ font-size : 9pt; text-align:center; background-color:#ffffff; border-color:#000000; border-width:1; }
+input.istext		{ font-size : 9pt; text-align:center; background-color:#ffffe8; border-color:#000000; border-width:0;}
+input.whitetext		{ text-align:left; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.redtext		{ text-align:left; font-size : 9pt; color:red; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.chktext		{ text-align:left; font-size : 9pt; color:#7F0900; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.fix	 		{ font-size : 9pt; text-align:left; background-color:#CCCCCC ; border-color:#000000; border-width:0;}
+input.default 		{ font-size : 9pt; text-align:left; background-color:#EAF1FF ; border-color:#000000; border-width:1;}
+
+input.blank			{ text-align:left; background-color:#6784ba; border-color:#000000; border-width:0; color:white; font-size: 9pt;}
+input.whiteblank	{ text-align:left; background-color:#ffffff; border-color:#000000; border-width:0; color:white; font-size: 9pt;}
+
+select.red		  	{ font-size : 9pt; background-color:#EAF1FF ; color:red; }
+select.default	  	{ font-size : 9pt; background-color:#EAF1FF ;}
+select      		{ font-size : 9pt;}
+option     	 		{ font-size : 9pt;}
+
+textarea.white		{ font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+textarea.default	{ font-size : 9pt; background-color:#EAF1FF; border-color:#000000; border-width:1; }
+textarea   	 		{ font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:1; }
+textarea.b  		{ font-size : 9pt; color:red; background-color:#CCCCCC; border-color:#000000; border-width:1; }
+
+td		   	 		{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#ffffff ;font-size:9pt; color:black; height:20;}
+td.title 			{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; text-align:center; background-color:#6784ba ; font-size:9pt; color:white; height:20; vertical-align:middle;}
+td.title_num 		{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; text-align:right; background-color:#6784ba ; font-size:9pt; color:white; height:20; vertical-align:middle;}
+td.est	 			{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; text-align:center; background-color:#E7EFFF ; font-size:9pt; color:black; font-weight:bold; height:35; vertical-align:middle;}
+td.line 			{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#000000; vertical-align:midele;}
+td.line2 			{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#ffffff; vertical-align:top;}
+td.line3 			{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#ffffff; vertical-align:midele; height:22;}
+td.result 			{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#E7EFFF; vertical-align:middle;}
+td.star 			{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#6799ba; font-size:9pt; color:white; height:25; vertical-align:middle;}
+td.is				{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#ffffe8; font-size:9pt; color:black; height:22;}
+td.is2				{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#CCCCCC; font-size:9pt; color:black; height:22;}
+
+input.taxtext   	{ font-size : 9pt; text-align:left;  background-color:#CCCCCC; border-color:#0166a9; border-width:1; }
+input.taxnum    	{ font-size : 9pt; text-align:right; background-color:#CCCCCC; border-color:#0166a9; border-width:1; }
+input.titletext		{ font-size : 9pt; text-align:left;  background-color:#6784ba; border-color:#000000; border-width:0; }
+input.btn 			{ font-size:9pt; height:16px; color:#ffffff; background-color:#666666; border:1px solid #333333; cursor:hand; text-align:center; vertical-align:middle;}
+
+
+/*¿Â±π»Ò--------------------------------------------------------------------------------------------------*/
+.b a:link 		{text-decoration:none; background:#989A69; border:1px solid #5C5E1E; color:#ffffff; font-family:±º∏≤,Gulim, AppleGothic, Seoul,Arial}
+.b a:visited 	{text-decoration:none; background:#989A69; border:1px solid #5C5E1E; color:#ffffff; font-family:±º∏≤,Gulim, AppleGothic, Seoul,Arial}
+.b a:active 	{text-decoration:none; background:#EFEBE7; border:1px solid #5C5E1E; color:#5C5E1E; font-family:±º∏≤,Gulim, AppleGothic, Seoul,Arial}
+.b a:hover 		{text-decoration:none; background:#EFEBE7; border:1px solid #5C5E1E; color:#5C5E1E; font-family:±º∏≤,Gulim, AppleGothic, Seoul,Arial}
+
+.c a:link 		{text-decoration:none; background:#005B00; border:1px solid #003300; color:#ECFFEA; font-family:±º∏≤,Gulim, AppleGothic, Seoul,Arial}
+.c a:visited 	{text-decoration:none; background:#005B00; border:1px solid #003300; color:#ECFFEA; font-family:±º∏≤,Gulim, AppleGothic, Seoul,Arial}
+.c a:active 	{text-decoration:none; background:#D2FECF; border:1px solid #003300; color:#003300; font-family:±º∏≤,Gulim, AppleGothic, Seoul,Arial}
+.c a:hover 	    {text-decoration:none; background:#D2FECF; border:1px solid #003300; color:#003300; font-family:±º∏≤,Gulim, AppleGothic, Seoul,Arial}
+
+.w a:link 		{text-decoration:none; 		color:#FFFFFF; font-family:±º∏≤,Gulim, AppleGothic, Seoul,Arial}
+.w a:visited 	{text-decoration:none; 		color:#FFFFFF; font-family:±º∏≤,Gulim, AppleGothic, Seoul,Arial}
+.w a:active 	{text-decoration:underline; color:#FFFFFF; font-family:±º∏≤,Gulim, AppleGothic, Seoul,Arial}
+.w a:hover 		{text-decoration:underline; color:#FFFFFF; font-family:±º∏≤,Gulim, AppleGothic, Seoul,Arial}
+
+td.title_a 		{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#75AF75; color:#ffffff; height:23; font-size:9pt; text-align:center; vertical-align:middle; }
+td.title_b 		{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#a58364; color:#ffffff; height:23; font-size:9pt; text-align:center; vertical-align:middle; }
+td.title_c 		{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#878751; color:#ffffff; height:23; font-size:9pt; text-align:center; vertical-align:middle; }
+
+td.title1 		{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#DFEFCF; color:#006600; height:23; font-size:9pt; text-align:center; vertical-align:middle; }
+td.contents1 	{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#E7E7E7; color:#666666; height:23; font-size:9pt; text-align:left; vertical-align:middle; }
+td.contents1_1 	{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#E7E7E7; color:#666666; height:23; font-size:9pt; text-align:center; vertical-align:middle; }
+td.contents1_2 	{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#E7E7E7; color:#666666; height:23; font-size:9pt; text-align:right; vertical-align:middle; }
+td.contents1_3 	{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#E7E7E7; color:#333333; height:23; font-size:9pt; text-align:center; vertical-align:middle; }
+
+td.title2		{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#EFE8CE; color:#86501B; height:23; font-size:9pt; text-align:center; vertical-align:middle; }
+td.contents2 	{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#ECECEC; color:#666666; height:23; font-size:9pt; text-align:left; vertical-align:middle; }
+td.contents2_1 	{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#ECECEC; color:#666666; height:23; font-size:9pt; text-align:center; vertical-align:middle; }
+td.contents2_2 	{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#ECECEC; color:#666666; height:23; font-size:9pt; text-align:right; vertical-align:middle; }
+td.contents2_3 	{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#f4f5f5; color:#666666; height:23; font-size:9pt; text-align:center; vertical-align:middle; }
+td.contents2_4 	{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#f4f5f5; color:#333333; height:23; font-size:9pt; text-align:center; vertical-align:middle; }
+
+td.title3 		{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#A8A86B; color:#ffffff; height:23; font-size:9pt; text-align:center; vertical-align:middle; }
+td.contents3 	{ font-family:±º∏≤,Gulim, AppleGothic, Seoul, Arial; background-color:#E2E2C7; color:#333333; height:23; font-size:9pt; text-align:left; vertical-align:middle; }
+
+input.textred 	{ text-align:right; font-size : 9pt; color:#FF0000; background-color:#ECECEC; border-color:#ECECEC; border-width:0; }
+input.bg1 		{ text-align:right; font-size : 9pt; background-color:E7E7E7; border-color:E7E7E7; border-width:0; }
+input.bg2 		{ text-align:right; font-size : 9pt; background-color:#ECECEC; border-color:#ECECEC; border-width:0; }
+
+input.menu 		{font-size:9pt; height:16px; color:#ffffff; background-color:#666666; border:1px solid #333333; cursor:hand; text-align:center; vertical-align:middle;}

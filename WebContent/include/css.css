@@ -1,0 +1,7 @@
+a:link		{ font-family: ±¼¸², Gulim, AppleGothic, Seoul, Arial; font-weight:bold; color:#ffffe0; text-decoration:none; font-size:9pt; }
+a:hover		{ font-family: ±¼¸², Gulim, AppleGothic, Seoul, Arial; font-weight:bold; color:#ffffa0; text-decoration:none; font-size:9pt; }
+a:visited	{ font-family: ±¼¸², Gulim, AppleGothic, Seoul, Arial; font-weight:bold; color:#ffffe0; text-decoration:none; font-size:9pt; }
+
+.css {  font-family: "Arial", "Helvetica", "sans-serif"; font-size: 10px; font-style: normal; color: 333333; background-repeat: no-repeat; background-position: right bottom}
+
+input.menu 		{font-size:9pt; font-weight:bold; height:20px; color:#ffffff; background-color:#6784ba; border:1 solid #333333; cursor:hand; text-align:center; vertical-align:middle;}

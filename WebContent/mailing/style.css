@@ -1,0 +1,89 @@
+A:active {  
+	font-family: 'dotum'; 
+	font-size: 12px; 
+	line-height: 18px; 
+	color: #000000; 
+	text-decoration: none
+}
+
+A:hover {
+	font-family: 'dotum'; 
+	font-size: 12px; 
+	line-height: 18px; 
+	color: red; 
+	text-decoration: none
+}
+
+A:link {  
+	font-family: 'dotum'; 
+	font-size: 12px; 
+	line-height: 18px; 
+	text-decoration: none
+}
+
+A:visited {  
+	font-family: 'dotum'; 
+	font-size: 12px; 
+	line-height: 18px; 
+	color: blue; 
+	text-decoration: none
+}
+
+A:hover.line1 {  
+	font-family: 'dotum'; 
+	font-size: 12px; 
+	line-height: 18px; 
+	color: #000000; 
+	text-decoration: underline
+}
+
+A:link.line1 {  
+	font-family: 'dotum'; 
+	font-size: 12px; 
+	line-height: 18px; 
+	color: #000000; 
+	text-decoration: none
+}
+
+A:visited.line1 {  
+	font-family: 'dotum'; 
+	font-size: 12px; 
+	line-height: 18px; 
+	color: #000000; 
+	text-decoration: none
+}
+
+
+body, table, tr, td, select, textarea{ 
+	font-family:'dotum';
+	font-size: 12px;
+	color: #000000;
+}
+.input {border:1px solid #EFEFEF;}
+INPUT {	 COLOR: black; FONT-SIZE: 12px }
+input.num			{ text-align:right; font-size : 9pt; border:1 solid #9a9a9a; background-color:#ffffff;}
+.box1 { font-size: 9pt;  border: 1px #000000 solid; clip:   rect(   )}
+.box_2 { font-size: 9pt; color: #FFFFFF; background-color:#FFFFFF; border: 0px #FFFFFF solid; clip:   rect(   )}
+.box_3 { font-size: 9pt; color: #000000; background-color:#FFFFFF; border: 0px #FFFFFF solid; clip:   rect(   )}
+.listnum {font-family:Tahoma;font-size:8pt}
+.listnum1 {font-family:Tahoma;font-size:9pt}
+.listnum2 a:link { font-size : 11px ; font-family : "Dotum"; color:#878787 ; LINE-HEIGHT: 120%; text-decoration : none ;  ; letter-spacing: -1px} 
+.listnum2 a:visited { font-size : 11px ; font-family : "Dotum"; color:#878787 ; LINE-HEIGHT: 120%; text-decoration : none ;  ; letter-spacing: -1px} 
+.listnum2 a:hover { font-size : 11px ; font-family : "Dotum"; color:#878787 ; LINE-HEIGHT: 120%; text-decoration : none ;  ; letter-spacing: -1px} 
+.listnum3{ font-size : 11px ; font-family : "Dotum"; color:#878787 ;}
+.input_line {border:1px #EFEFEF; background:; background:url(dot.gif) repeat-x bottom; color:#7E8AFE;  line-height:100%}
+.input_line {border:0; background:; background:url(dot.gif) repeat-x bottom; color:#7E8AFE;  line-height:100%}
+.textarea {border:solid 1 #7582FD; background-color:; overflow:auto; width:100%; height:220;}
+.k {  border: C4BEB7; border-style: dotted; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+.k1{  border: 1px dotted; border-color: C4BEB7 C4BEB7 C4BEB7 #FFFFFF}
+.y {  border-color: E6E7E2 E6E7E2 E6E7E2 #FFFFFF; border-style: dotted; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 0px}
+.y1 {  border: E6E7E2; border-style: dotted; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+.line {border-top: #EDEDED 1px Solid;
+       border-left: #EDEDED 1px Solid;
+       border-right: #EDEDED 1px Solid;
+       border-bottom: #EDEDED 1px Solid;
+.login {  border: #5E84CB 1px solid;  padding-top: 2px; padding-left: 6px;  color: #5E84CB; width: 110px;  height: 15px; font-size:8pt;}
+input.ttext		    { text-align:center; font-size : 9pt; background-color:#e5e5e5; border-color:#ffffff; border-width:0; color:#303030; }
+
+}
+    

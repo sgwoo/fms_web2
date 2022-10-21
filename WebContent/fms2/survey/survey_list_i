@@ -1,0 +1,62 @@
+<%@ page language="java" contentType="text/html;charset=euc-kr" %>
+<%@ page import="java.util.*"%>
+<%@ page import="acar.util.*"%>
+<jsp:useBean id="rs_db" scope="page" class="acar.res_search.ResSearchDatabase"/>
+<%@ include file="/acar/cookies.jsp" %>
+
+<%
+	String auth_rw = request.getParameter("auth_rw")==null?"":request.getParameter("auth_rw");
+	String br_id = request.getParameter("br_id")==null?"":request.getParameter("br_id");
+	String user_id = request.getParameter("user_id")==null?"":request.getParameter("user_id");
+	
+	String s_kd = request.getParameter("s_kd")==null?"":request.getParameter("s_kd");
+	String t_wd = request.getParameter("t_wd")==null?"":request.getParameter("t_wd");
+	String asc = request.getParameter("asc")==null?"0":request.getParameter("asc");
+	
+	//로그인ID&영업소ID
+	LoginBean login = LoginBean.getInstance();
+	if(user_id.equals("")) 	user_id = login.getCookieValue(request, "acar_id");
+	if(br_id.equals(""))	br_id = login.getCookieValue(request, "acar_br");
+	if(auth_rw.equals(""))	auth_rw = rs_db.getAuthRw(user_id, "01", "03", "01");
+%>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=euc-kr">
+<title>fms</title>
+<link rel="stylesheet" type="text/css" href="/include/table_t.css"></link>
+<link rel="stylesheet" type="text/css" media="screen" href="http://formbuilder.online/assets/css/form-builder.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="http://formbuilder.online/assets/js/form-builder.min.js"></script>
+<script>
+	jQuery(document).ready(function($) {
+		var fbTemplate = document.getElementById('build-wrap');
+		$(fbTemplate).formBuilder();
+	});
+</script>
+</head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+		<tr>
+    	<td>
+    	    <table width="100%" border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td width=7 rowspan=2><img src="/acar/images/center/menu_bar_1.gif" width=7 height=33></td>
+                    <td class=bar>&nbsp;&nbsp;&nbsp;<img src="/acar/images/center/menu_bar_dot.gif" width=4 height=5 align=absmiddle>&nbsp;<span class=style1>콜센터 > <span class=style5>콜항목관리</span></span></td>
+                    <td width=7 rowspan=2><img src="/acar/images/center/menu_bar_2.gif" width=7 height=33></td>
+                </tr>
+            </table>
+    	</td>
+    </tr>
+    <tr>
+        <td class=h></td>
+    </tr>
+	
+</table>  
+
+  <div id="build-wrap"></div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+/* body & a*/
+
+body.general{ background-color:#FFFFFF; font-family: ±¼¸², Gulim, AppleGothic, Seoul, Arial; font-size: 9pt;}
+a:link		{ font-family: ±¼¸², Gulim, AppleGothic, Seoul, Arial; text-decoration:underline; font-size:9pt; }
+a:hover		{ font-family: ±¼¸², Gulim, AppleGothic, Seoul, Arial; color:red; text-decoration:underline; font-size:9pt; }
+a:visited	{ font-family: ±¼¸², Gulim, AppleGothic, Seoul, Arial; color:blue; text-decoration:none; font-size:9pt; }
+
+input.text      	{ font-size : 9pt; text-align:left; background-color:#ffffff; border-color:#000000; border-width:1; }
+input.text_ce      	{ font-size : 9pt; text-align:center; background-color:#ffffff; border-color:#000000; border-width:1; }
+input.white      	{ font-size : 9pt; text-align:center; background-color:#ffffff; border-color:#ffffff; border-width:0;}
+input.t_color      	{ font-size : 9pt; text-align:center;background-color:#E7EFFF; border-color:#ffffff; border-width:0;}
+input.dont      	{ font-size : 9pt; text-align:left; background-color:#E7EFFF; border-color:#000000; border-width:0; width:45px; height:20;}
+input.is      		{ font-size : 9pt; text-align:left; background-color:#ffffff; border-color:#000000; border-width:0; width:45px;  height:20;}
+input.num			{ text-align:right; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:1; }
+input.isnum			{ text-align:right; font-size : 9pt; background-color:#ffffe8; border-color:#000000; border-width:0;}
+input.isnumsee		{ text-align:right; font-size : 9pt; background-color:#ffffe8; border-color:#000000; border-width:1;}
+input.istext		{ font-size : 9pt; text-align:center; background-color:#ffffe8; border-color:#000000; border-width:0;}
+input.whitetext		{ text-align:left; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.whitetext_ce	{ text-align:left; text-align:center; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.whitenum		{ text-align:right; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.whitenum_b	{ text-align:right; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; font:bold; }
+input.whitenum_b_red{ text-align:right; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; font:bold; color:red; vertical-align:text-bottom; }
+input.blank			{ text-align:left; background-color:#6784ba; border-color:#000000; border-width:0; color:white; font-size: 9pt;}
+input.whiteblank	{ text-align:left; background-color:#ffffff; border-color:#000000; border-width:0; color:white; font-size: 9pt;}
+input.blanknum		{ text-align:right; background-color:#6784ba; border-color:#000000; border-width:0; color:white; font-size: 9pt;}
+input.whitenum_8size	{ text-align:right; font-size : 8pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.whitenum_7size	{ text-align:right; font-size : 7pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+
+select      { font-size : 9pt;}
+option      { font-size : 9pt;}
+textarea      { font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:1; }
+
+td		    	{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; background-color:#ffffff; color:#000000; height:20; font-size:9pt; }
+td.title 	{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; text-align:center; background-color:#EAF1FF ; font-size:9pt; color:#00349F; vertical-align:middle; height:20;}
+td.line 	{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; background-color:#6699FF; vertical-align:midele;}
+td.title_num 	{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; text-align:right; background-color:#6784ba ; font-size:9pt; color:white; height:20; vertical-align:middle;}
+td.est	 	{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; text-align:center; background-color:#E7EFFF ; font-size:9pt; color:black; font-weight:bold; height:35; vertical-align:middle;}
+td.line2 	{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; background-color:#ffffff; vertical-align:top;}
+td.result 	{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; background-color:#E7EFFF; vertical-align:middle;}
+td.star 	{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; background-color:#6799ba; font-size:9pt; color:white; height:25; vertical-align:middle;}
+td.is		{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; background-color:#ffffe8; font-size:9pt; color:black; height:22;}
+td.is2		{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; background-color:#CCCCCC; font-size:9pt; color:black; height:22;}
+td.h30    	{ font-family:±¼¸²,Gulim, AppleGothic, Seoul, Arial; background-color:#ffffff; color:#000000; height:30; font-size:9pt; }

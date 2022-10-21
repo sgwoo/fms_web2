@@ -1,0 +1,409 @@
+<%@ page language="java" contentType="text/html;charset=euc-kr" %>
+<%@ page import="java.util.*, acar.util.*, acar.common.*, acar.forfeit_mng.*, acar.user_mng.*, acar.estimate_mng.*"%>
+<jsp:useBean id="FineDocDb" scope="page" class="acar.forfeit_mng.FineDocDatabase"/>
+<jsp:useBean id="FineDocBn" 	scope="page" class="acar.forfeit_mng.FineDocBean"/>
+<jsp:useBean id="FineDocListBn" scope="page" class="acar.forfeit_mng.FineDocListBean"/>
+<%@ include file="/acar/cookies.jsp" %>
+
+<%
+	String auth_rw = request.getParameter("auth_rw")==null?"":request.getParameter("auth_rw");
+	String user_id = request.getParameter("user_id")==null?"":request.getParameter("user_id");//·Î±×ÀÎ-ID
+	String br_id = request.getParameter("br_id")==null?"":request.getParameter("br_id");//·Î±×ÀÎ-¿µ¾÷¼Ò
+	String gubun1 = request.getParameter("gubun1")==null?"":request.getParameter("gubun1");
+	String gubun2 = request.getParameter("gubun2")==null?"":request.getParameter("gubun2");
+	String gubun3 = request.getParameter("gubun3")==null?"":request.getParameter("gubun3");
+	String gubun4 = request.getParameter("gubun4")==null?"":request.getParameter("gubun4");
+	String st_dt = request.getParameter("st_dt")==null?"":request.getParameter("st_dt");
+	String end_dt = request.getParameter("end_dt")==null?"":request.getParameter("end_dt");
+	String s_kd = request.getParameter("s_kd")==null?"":request.getParameter("s_kd");
+	String t_wd = request.getParameter("t_wd")==null?"":request.getParameter("t_wd");
+	String sort = request.getParameter("sort")==null?"":request.getParameter("sort");
+	String asc = request.getParameter("asc")==null?"":request.getParameter("asc");
+	
+	String doc_id = request.getParameter("doc_id")==null?"":request.getParameter("doc_id");
+	String gov_id = request.getParameter("gov_id")==null?"":request.getParameter("gov_id");
+	
+	CommonDataBase c_db = CommonDataBase.getInstance();
+	
+	FineDocBn = FineDocDb.getFineDoc(doc_id);
+	
+	//´ëÃâ½ÅÃ»¸®½ºÆ®
+	Vector FineList = FineDocDb.getBankDocLists(doc_id);
+	
+	if(FineDocBn.getH_mng_id().equals(""))		FineDocBn.setH_mng_id("000004");
+	if(FineDocBn.getB_mng_id().equals(""))		FineDocBn.setB_mng_id("000048");
+	
+	//´ã´çÀÚÁ¤º¸
+	UserMngDatabase u_db = UserMngDatabase.getInstance();		
+	UsersBean h_user = u_db.getUsersBean(FineDocBn.getH_mng_id());
+	UsersBean b_user = u_db.getUsersBean(FineDocBn.getB_mng_id());
+	
+	Hashtable br1 = c_db.getBranch(b_user.getBr_id());
+		
+	//ÀÎ¼â¿©ºÎ ¼öÁ¤
+	if(FineDocBn.getPrint_dt().equals("")){
+		FineDocDb.changePrint_dt(doc_id, user_id);
+	}
+
+	EstiDatabase e_db = EstiDatabase.getInstance();
+	//º¯¼ö
+	String var1 = e_db.getEstiSikVarCase("1", "", "bank1");//´ã´çºÎ¼­Àå
+	String var2 = e_db.getEstiSikVarCase("1", "", "bank2");	//´ã´çÀÚ	
+	String var3 = e_db.getEstiSikVarCase("1", "", "bank_app1");//Ã·ºÎ¼­·ù1
+	String var4 = e_db.getEstiSikVarCase("1", "", "bank_app2");//Ã·ºÎ¼­·ù2
+	String var5 = e_db.getEstiSikVarCase("1", "", "bank_app3");//Ã·ºÎ¼­·ù3
+	String var6 = e_db.getEstiSikVarCase("1", "", "bank_app4");//Ã·ºÎ¼­·ù4
+	String var7 ="";
+	 if  (Integer.parseInt(FineDocBn.getDoc_dt()) > 20141204) {	
+		 var7 = e_db.getEstiSikVarCase("1", "", "bank_app6");//Ã·ºÎ¼­·ù5
+	 } else {
+		 var7 = e_db.getEstiSikVarCase("1", "", "bank_app5");//Ã·ºÎ¼­·ù5
+	} 
+			
+	int app_doc_h = 0;
+	String app_doc_v = "";
+	if(FineDocBn.getApp_doc1().equals("Y")){	
+		app_doc_h += 20;
+		app_doc_v += "1";
+	}
+	if(FineDocBn.getApp_doc2().equals("Y")){
+		app_doc_h += 20;
+		app_doc_v += "2";
+	}
+	if(FineDocBn.getApp_doc3().equals("Y")){
+		app_doc_h += 20;
+		app_doc_v += "3";
+	}
+	if(FineDocBn.getApp_doc4().equals("Y")){
+		app_doc_h += 20;
+		app_doc_v += "4";
+	}
+	if(FineDocBn.getApp_doc5().equals("Y")){		
+		app_doc_h += 20;
+		app_doc_v += "5";
+	}
+	
+	int app_doc_size = app_doc_h/20;	
+				
+	//³»¿ë ¶óÀÎ¼ö
+	int tot_size =  FineList.size();
+	
+	//¿ÜÈ¯Ä³ÇÇÅ»|| È¿¼ºÄ³ÇÇÅ» || ÇÏ³ªÀºÇà || ÇÏ³ªÄ³ÇÇÅ» ||¿ÜÈ¯ÀºÇà || ¿ì¸®ÆÄÀÌ³½¼È|| hkÀúÃàÀºÇà||Çö´ëÄ³ÇÇÅ» || ¼öÇùÀºÇà || ÀüºÏÀºÇà    ¶óÀÎ¼ö °­Á¦Á¶Á¤
+	if ( FineDocBn.getGov_id().equals("0057") || FineDocBn.getGov_id().equals("0018") || FineDocBn.getGov_id().equals("0026") || FineDocBn.getGov_id().equals("0039") ||  FineDocBn.getGov_id().equals("0040") || FineDocBn.getGov_id().equals("0038") || FineDocBn.getGov_id().equals("0004") || FineDocBn.getGov_id().equals("0039") || FineDocBn.getGov_id().equals("0001") || FineDocBn.getGov_id().equals("0009") || FineDocBn.getGov_id().equals("0003") || FineDocBn.getGov_id().equals("0043") || FineDocBn.getGov_id().equals("0041") || FineDocBn.getGov_id().equals("0044") || FineDocBn.getGov_id().equals("0002") || FineDocBn.getGov_id().equals("0051") || FineDocBn.getGov_id().equals("0055")  || FineDocBn.getGov_id().equals("0059") || FineDocBn.getGov_id().equals("0058")  || FineDocBn.getGov_id().equals("0060")  || FineDocBn.getGov_id().equals("0037") || FineDocBn.getGov_id().equals("0011")  || FineDocBn.getGov_id().equals("0063") || FineDocBn.getGov_id().equals("0028")  || FineDocBn.getGov_id().equals("0064")  || FineDocBn.getGov_id().equals("0033")   || FineDocBn.getGov_id().equals("0065")   || FineDocBn.getGov_id().equals("0029")     || FineDocBn.getGov_id().equals("0025")   || FineDocBn.getGov_id().equals("0068")    || FineDocBn.getGov_id().equals("0074")  || FineDocBn.getGov_id().equals("0076")  ) {
+	    tot_size=1;
+	}
+	int line_h = 32;
+	//ÆäÀÌÁö ±æÀÌ
+	int page_h = 850;
+	//°¢ Å×ÀÌºí ±âº» ±æÀÌ
+	int table1_h = 315+120;
+	int table2_h = tot_size*line_h;	
+	int table3_h = app_doc_h+140;
+	
+	//Ãâ·ÂÆäÀÌÁö¼ö ±¸ÇÏ±â
+	int page_cnt = ((table1_h+table2_h+table3_h)/page_h);
+	if((table1_h+table2_h+table3_h)%page_h != 0) page_cnt = page_cnt + 1;
+	
+	//¸¶Áö¸· Å×ÀÌºí ±æÀÌ ±¸ÇÏ±â
+	int height = (page_h*page_cnt)-(table1_h+table2_h);	
+	
+	long t_amt1[] = new long[1];
+    long t_amt2[] = new long[1];
+    long t_amt3[] = new long[1];
+       long t_amt4[] = new long[1];
+         long t_amt5[] = new long[1];
+	
+	long s_amt1[] = new long[1];
+    long s_amt2[] = new long[1];
+    long s_amt3[] = new long[1];
+    
+        long s_amt4[] = new long[1];
+         long s_amt5[] = new long[1];
+%>
+
+<html>
+<head><title>FMS</title>
+<meta http-equiv="content-type" content="text/html; charset=euc-kr">
+<script language='JavaScript' src='/include/common.js'></script>
+<script language="JavaScript" type="text/JavaScript">	
+
+	function onprint(){
+		factory.printing.header 	= ""; //ÆóÀÌÁö»ó´Ü ÀÎ¼â
+		factory.printing.footer 	= ""; //ÆóÀÌÁöÇÏ´Ü ÀÎ¼â
+		factory.printing.portrait 	= true; //true-¼¼·ÎÀÎ¼â, false-°¡·ÎÀÎ¼â    
+		factory.printing.leftMargin 	= 12.0; //ÁÂÃø¿©¹é   
+		factory.printing.rightMargin 	= 12.0; //¿ìÃø¿©¹é
+		factory.printing.topMargin 	= 20.0; //»ó´Ü¿©¹é    
+		factory.printing.bottomMargin 	= 30.0; //ÇÏ´Ü¿©¹é
+		factory.printing.Print(true, window);//arg1-´ëÈ­»óÀÚÇ¥½Ã¿©ºÎ(true or false), arg2-ÀüÃ¼À©µµ¿ìorÆ¯Á¤ÇÁ·¹ÀÓ
+	}
+
+</script>
+</head>
+<body onLoad="javascript:onprint();">
+<object id=factory style="display:none" classid="clsid:1663ed61-23eb-11d2-b92f-008048fdd814" codebase="http://www.amazoncar.co.kr/smsx.cab#Version=6,3,439,30">
+</object>
+
+<form action="" name="form1" method="POST" >
+  <table width='670' height="<%=table1_h%>" border="0" cellpadding="0" cellspacing="0">
+    <tr> 
+      <td colspan="2" height="40" align="center" style="font-size : 18pt;"><b><font face="¹ÙÅÁ">Pick 
+        amazoncar! We'll pick you up.</font></b></td>
+    </tr>
+    <tr> 
+      <td colspan="2" height="5" align="center"></td>
+    </tr>
+    <tr bgcolor="#000000"> 
+      <td colspan="2" align='center' height="10"> <table width="100%" border="0" cellspacing="1" cellpadding="0">
+          <tr bgcolor="#FFFFFF"> 
+            <td height="40"> <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                <tr> 
+                  <td height="20" colspan="2" style="font-size : 9pt;"><font face="¹ÙÅÁ"><%=br1.get("BR_POST")%>
+                    <%=br1.get("BR_ADDR")%></font></td>
+                  <td height="20" style="font-size : 9pt;" ><font face="¹ÙÅÁ">Tel:<%=b_user.getHot_tel()%></font></td>
+                  <td height="20" style="font-size : 9pt;" ><font face="¹ÙÅÁ">Fax:<%=br1.get("FAX")%></font></td>
+                </tr>
+                <tr> 
+                  <td height="20" style="font-size : 9pt;"><font face="¹ÙÅÁ"><%=h_user.getDept_nm()%>Àå 
+                    <%=h_user.getUser_nm()%></font></td>
+                  <td height="20" style="font-size : 9pt;"><font face="¹ÙÅÁ">´ã´çÀÚ 
+                    <%=b_user.getUser_nm()%>(<%=b_user.getUser_email()%>)</font></td>
+                  <td height="20" colspan="2" style="font-size : 9pt;"><font face="¹ÙÅÁ">http://www.amazoncar.co.kr</font></td>
+                </tr>
+              </table></td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr> 
+      <td height="20" colspan="2" align='center'></td>
+    </tr>
+    <tr> 
+      <td height="125" colspan="2" align='center'> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td width="10%" height="25" style="font-size : 10pt;"><font face="¹ÙÅÁ">¹®¼­¹øÈ£</font></td>
+            <td width="3%" height="25" style="font-size : 10pt;"><font face="¹ÙÅÁ">:</font></td>
+            <td height="25" width="87%" style="font-size : 10pt;"><font face="¹ÙÅÁ"><%=FineDocBn.getDoc_id()%> 
+              </font></td>
+          </tr>
+          <tr> 
+            <td height="25" style="font-size : 10pt;"><font face="¹ÙÅÁ">½ÃÇàÀÏÀÚ</font></td>
+            <td height="25" style="font-size : 10pt;"><font face="¹ÙÅÁ">:</font></td>
+            <td height="25" style="font-size : 10pt;"><font face="¹ÙÅÁ"><%=AddUtil.getDate3(FineDocBn.getDoc_dt())%></font></td>
+          </tr>
+          <tr> 
+            <td height="25" style="font-size : 10pt;"><font face="¹ÙÅÁ">¼ö&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ½Å</font></td>
+            <td height="25" style="font-size : 10pt;"><font face="¹ÙÅÁ">:</font></td>
+            <td height="25" style="font-size : 10pt;"><font face="¹ÙÅÁ"><%=c_db.getNameById(FineDocBn.getGov_id(), "BANK")%></font></td>
+          </tr>
+          <tr> 
+            <td height="25" style="font-size : 10pt;"><font face="¹ÙÅÁ">Âü&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Á¶</font></td>
+            <td height="25" style="font-size : 10pt;"><font face="¹ÙÅÁ">:</font></td>
+            <td height="25" style="font-size : 10pt;"><font face="¹ÙÅÁ"><%=FineDocBn.getMng_dept()%></font></td>
+          </tr>
+          <tr> 
+            <td height="25" style="font-size : 10pt;"><font face="¹ÙÅÁ">Á¦&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ¸ñ</font></td>
+            <td height="25" style="font-size : 10pt;"><font face="¹ÙÅÁ">:</font></td>
+            <td height="25" style="font-size : 10pt;"><font face="¹ÙÅÁ">ÀÚµ¿Â÷ ±¸ÀÔ¿¡ ÇÊ¿äÇÑ ÀÚ±ÝÀÇ ´ëÃâ ¿äÃ»</font></td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr> 
+      <td height="20" colspan="2" align='center'></td>
+    </tr>
+    <tr bgcolor="#999999"> 
+      <td colspan=2 align='center' height="3" bgcolor="#333333"></td>
+    </tr>
+    <tr> 
+      <td height="20" colspan=2 align='center'>&nbsp;</td>
+    </tr>
+    <tr> 
+      <td align='center' height="30" width="13%" style="font-size : 10pt;"><font face="¹ÙÅÁ">&nbsp;</font></td>
+      <td width="87%" height="30" style="font-size : 10pt;"><font face="¹ÙÅÁ">1. ±Í »çÀÇ 
+        ¹«±ÃÇÑ ¹ßÀüÀ» ±â¿øÇÕ´Ï´Ù.</font></td>
+    </tr>
+    <tr> 
+      <td align='center' height="30" style="font-size : 10pt;"><font face="¹ÙÅÁ">&nbsp;</font></td>
+      <td height="30" style="font-size : 10pt;"><font face="¹ÙÅÁ">2. ¾Æ·¡¿Í °°ÀÌ ÀÚµ¿Â÷ ±¸ÀÔ¿¡ ÇÊ¿äÇÑ ÀÚ±ÝÀÇ ´ëÃâÀ» ¿äÃ»ÇÏ¿À´Ï, °ËÅä ÈÄ ½ÇÇàÇÏ¿© 
+        </font></td>
+    </tr>
+    <tr> 
+      <td height="30" colspan="2" style="font-size : 10pt;"><font face="¹ÙÅÁ"> ÁÖ½Ê½Ã¿À.
+        </font></td>
+    </tr>
+   
+    <tr> 
+      <td colspan=2 align='center' height="50" style="font-size : 9pt;"><font size="2" face="¹ÙÅÁ">== ¾Æ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;·¡ 
+        ==</font></td>
+    </tr>
+    <tr bgcolor="#000000"> 
+      <td colspan="2" align='center' height="10"> <table width="100%" border="0" cellspacing="1" cellpadding="0">
+          <tr bgcolor="#A6FFFF" align="center"> 
+            <td style="font-size : 8pt;" colspan="2"width="20%" height="30"><font face="¹ÙÅÁ">»óÈ¯Á¶°Ç</font></td>
+            <td style="font-size : 8pt;" rowspan="2" width="10%"><font face="¹ÙÅÁ">±¸ÀÔ´ë¼ö</font></td>
+            <td style="font-size : 8pt;" rowspan="2" width="15%"><font face="¹ÙÅÁ">±¸ÀÔ°¡°Ý</font></td>
+            <td style="font-size : 8pt;" colspan="2" width="30%"><font face="¹ÙÅÁ">´ëÃâ</font></td>
+            <td style="font-size : 8pt;" rowspan="2" width="15%"><font face="¹ÙÅÁ">¼³Á¤±Ý¾×</font></td>
+            <td style="font-size : 8pt;" rowspan="2" width="10%"><font face="¹ÙÅÁ">´ëÃâ±Ý¸®</font></td>
+          </tr>
+          <tr bgcolor="#FFFFFF"> 
+            <td style="font-size : 8pt;" width="10%" height="25" align="center" bgcolor="#A6FFFF"><font face="¹ÙÅÁ">±â°£</font></td>
+            <td style="font-size : 8pt;" width="10%" align="center" bgcolor="#A6FFFF"><font face="¹ÙÅÁ">¹æ¹ý</font></td>
+            <td style="font-size : 8pt;" width="15%" align="center" bgcolor="#A6FFFF"><font face="¹ÙÅÁ">±Ý¾×</font></td>
+            <td style="font-size : 8pt;" width="15%" align="center" bgcolor="#A6FFFF"><font face="¹ÙÅÁ">½ÇÇàÀÏÀÚ</font></td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr> 
+      <td height="2" colspan="2"></td>
+    </tr>
+  </table>
+  <table width='670' height="<%//=table2_h%>" border="0" cellpadding="0" cellspacing="0">
+    <tr bgcolor="#000000">
+      <td width="100%" height="10" align='center'><table width="100%" border="0" cellspacing="1" cellpadding="0">
+<% if(FineList.size()>0){
+          		
+		for(int i=0; i<FineList.size(); i++){ 
+			FineDocListBn = (FineDocListBean)FineList.elementAt(i); 
+
+			for(int j=0; j<1; j++){
+		
+				t_amt1[j] += AddUtil.parseLong(String.valueOf(FineDocListBn.getAmt1()));
+				t_amt2[j] += AddUtil.parseLong(String.valueOf(FineDocListBn.getAmt2()));
+				t_amt3[j] += AddUtil.parseLong(String.valueOf(FineDocListBn.getAmt3()));
+			
+				//Àú´ç±Ç±Ý¾× ÀúÀå - 20120503	
+				t_amt4[j] += AddUtil.parseLong(String.valueOf(FineDocListBn.getAmt6()));
+				
+																		
+				//sbi4  36¹Ì¸¸Àº 36 ±× ÀÌ»óÀº ¿ø·¡, »êÀº0010 36¹Ì¸¸Àº ¿ø·¡°³¿ù , 36ÀÌ»óÀº 36À¸·Î , ¿ÜÈ¯ 0040 36°³¿ù IBK 0057Àº 36°³¿ù, ·Ôµ¥0038Àº 36°³¿ù, ÇÏ³ª0041Àº 36°³¿ù, ½ÅÇÑÀºÇàÀº 36°³¿ù, ½ÅÇÑÄ³ÇÇÅ»(0009)Àº 36°³¿ù, È¿¼ºÄ³ÇÇÅ»(0039)Àº 36,  hkÀúÃàÀºÇà(0059)Àº 36,  ¹«¸²(0058)Àº 36, Çö´ëÄ³ÇÇÅ»(0011)Àº 36, ¼öÇù(0028)Àº 36 , ±¤ÁÖÀºÇà(0029)Àº 36
+				if( ( AddUtil.parseInt(String.valueOf(FineDocListBn.getPaid_no())) <=36 &&  FineDocBn.getGov_id().equals("0073") ) ||   ( AddUtil.parseInt(String.valueOf(FineDocListBn.getPaid_no())) >= 36 &&  FineDocBn.getGov_id().equals("0010") )  ||  FineDocBn.getGov_id().equals("0056") || FineDocBn.getGov_id().equals("0039") || FineDocBn.getGov_id().equals("0004") || FineDocBn.getGov_id().equals("0043") || FineDocBn.getGov_id().equals("0001") || FineDocBn.getGov_id().equals("0041") || FineDocBn.getGov_id().equals("0044") || FineDocBn.getGov_id().equals("0057")  || FineDocBn.getGov_id().equals("0005")  || FineDocBn.getGov_id().equals("0009")  ||   FineDocBn.getGov_id().equals("0003") || FineDocBn.getGov_id().equals("0038") || FineDocBn.getGov_id().equals("0055") || FineDocBn.getGov_id().equals("0018") ||  FineDocBn.getGov_id().equals("0026")  ||  FineDocBn.getGov_id().equals("0051")   ||  FineDocBn.getGov_id().equals("0039")  ||  FineDocBn.getGov_id().equals("0040")  ||  FineDocBn.getGov_id().equals("0059") ||  FineDocBn.getGov_id().equals("0058")   ||  FineDocBn.getGov_id().equals("0060")   ||  FineDocBn.getGov_id().equals("0037")   ||  FineDocBn.getGov_id().equals("0011")   ||  FineDocBn.getGov_id().equals("0002")  ||  FineDocBn.getGov_id().equals("0063")  ||  FineDocBn.getGov_id().equals("0028")   ||  FineDocBn.getGov_id().equals("0064")  ||  FineDocBn.getGov_id().equals("0065")   ||  FineDocBn.getGov_id().equals("0029")  ||  FineDocBn.getGov_id().equals("0033")  ||  FineDocBn.getGov_id().equals("0025")   ||  FineDocBn.getGov_id().equals("0068")    ||  FineDocBn.getGov_id().equals("0069")   ||  FineDocBn.getGov_id().equals("0072") ||  FineDocBn.getGov_id().equals("0074") ||  FineDocBn.getGov_id().equals("0075")   ||  FineDocBn.getGov_id().equals("0076")  ){	
+					s_amt1[j] += AddUtil.parseLong(String.valueOf(FineDocListBn.getAmt1()));				
+					s_amt2[j] += AddUtil.parseLong(String.valueOf(FineDocListBn.getAmt2()));
+					s_amt3[j] += AddUtil.parseLong(String.valueOf(FineDocListBn.getAmt3()));	
+					s_amt4[j] += AddUtil.parseLong(String.valueOf(FineDocListBn.getAmt6()));   // Àú´ç±Ç ÀúÀå»ç¿ë
+				
+				}
+					
+			}
+						
+%>
+
+<% if (   (FineDocBn.getGov_id().equals("0010") && AddUtil.parseInt(String.valueOf(FineDocListBn.getPaid_no())) < 36)   ) { %>	
+         		
+	<tr bgcolor="#FFFFFF" align="center">
+            <td width="10%" height="<%=line_h%>" bgcolor="#FFFFFF" style="font-size : 8pt;"><font face="¹ÙÅÁ"><%if(AddUtil.parseInt(String.valueOf(FineDocListBn.getPaid_no())) >= 36 ){%>36°³¿ù<%}else{%><%=FineDocListBn.getPaid_no()%>°³¿ù<%}%></font></td>
+            <td width="10%" style="font-size : 8pt;"><font face="¹ÙÅÁ"><%=FineDocListBn.getCar_st()%></font></td>
+            <td width="10%" style="font-size : 8pt;" ><font face="¹ÙÅÁ"><%=FineDocListBn.getAmt1()%></font></td>
+            <td width="15%" style="font-size : 8pt;" align=right><font face="¹ÙÅÁ"><%=Util.parseDecimal(String.valueOf(FineDocListBn.getAmt2()))%>&nbsp;</font></td>
+            <td width="15%" style="font-size : 8pt;" align=right><font face="¹ÙÅÁ"><%=Util.parseDecimal(String.valueOf(FineDocListBn.getAmt3()))%>&nbsp;</font></td>
+            <td width="15%" style="font-size : 8pt;"><font face="¹ÙÅÁ"><%=FineDocListBn.getVio_dt()%></font></td>
+            <td width="15%" style="font-size : 8pt;" align=right><font face="¹ÙÅÁ"> <%=Util.parseDecimal(String.valueOf(FineDocListBn.getAmt6() ))%>&nbsp;                  
+            </font></td>
+            <td width="10%" style="font-size : 8pt;"><font face="¹ÙÅÁ"><%=FineDocListBn.getScan_file()%></font></td>
+        </tr>
+<% 	} %>   
+     
+  <% if ( (  (FineDocBn.getGov_id().equals("0073") && AddUtil.parseInt(String.valueOf(FineDocListBn.getPaid_no())) > 36)  ) ) { %>	
+		 <tr bgcolor="#FFFFFF" align="center">
+            <td width="10%" height="<%=line_h%>" bgcolor="#FFFFFF" style="font-size : 8pt;"><font face="¹ÙÅÁ"><%=FineDocListBn.getPaid_no()%>°³¿ù</font></td>
+              <td width="10%" style="font-size : 8pt;"><font face="¹ÙÅÁ"><%=FineDocListBn.getCar_st()%></font></td>
+            <td width="10%" style="font-size : 8pt;" ><font face="¹ÙÅÁ"><%=FineDocListBn.getAmt1()%></font></td>
+            <td width="15%" style="font-size : 8pt;" align=right><font face="¹ÙÅÁ"><%=Util.parseDecimal(String.valueOf(FineDocListBn.getAmt2()))%>&nbsp;</font></td>
+            <td width="15%" style="font-size : 8pt;" align=right><font face="¹ÙÅÁ"><%=Util.parseDecimal(String.valueOf(FineDocListBn.getAmt3()))%>&nbsp;</font></td>
+            <td width="15%" style="font-size : 8pt;"><font face="¹ÙÅÁ"><%=FineDocListBn.getVio_dt()%></font></td>
+            <td width="15%" style="font-size : 8pt;" align=right><font face="¹ÙÅÁ"> <%=Util.parseDecimal(String.valueOf(FineDocListBn.getAmt6() ))%>&nbsp;                  
+            </font></td>
+            <td width="10%" style="font-size : 8pt;"><font face="¹ÙÅÁ"><%=FineDocListBn.getScan_file()%></font></td>
+          </tr>
+ <% 	} %>    
+    
+<%  } %> 
+		
+<% if ( ( AddUtil.parseInt(String.valueOf(FineDocListBn.getPaid_no())) >= 36 && FineDocBn.getGov_id().equals("0010")  ) ||   FineDocBn.getGov_id().equals("0005") ||   FineDocBn.getGov_id().equals("0056") || FineDocBn.getGov_id().equals("0057")  || FineDocBn.getGov_id().equals("0040")  || FineDocBn.getGov_id().equals("0038") || FineDocBn.getGov_id().equals("0039") || FineDocBn.getGov_id().equals("0001") ||  FineDocBn.getGov_id().equals("0009")  ||  FineDocBn.getGov_id().equals("0003") ||  FineDocBn.getGov_id().equals("0004") ||  FineDocBn.getGov_id().equals("0043") ||  FineDocBn.getGov_id().equals("0044") || FineDocBn.getGov_id().equals("0041") || FineDocBn.getGov_id().equals("0002") || FineDocBn.getGov_id().equals("0051") || FineDocBn.getGov_id().equals("0055") || FineDocBn.getGov_id().equals("0018") ||  FineDocBn.getGov_id().equals("0026")   ||  FineDocBn.getGov_id().equals("0039")   ||  FineDocBn.getGov_id().equals("0059")    ||  FineDocBn.getGov_id().equals("0058")  ||  FineDocBn.getGov_id().equals("0060")  ||  FineDocBn.getGov_id().equals("0037")   ||  FineDocBn.getGov_id().equals("0011")   ||  FineDocBn.getGov_id().equals("0063")    ||  FineDocBn.getGov_id().equals("0028")  ||  FineDocBn.getGov_id().equals("0064")  ||  FineDocBn.getGov_id().equals("0065")  ||  FineDocBn.getGov_id().equals("0029")   ||  FineDocBn.getGov_id().equals("0033")   ||  FineDocBn.getGov_id().equals("0025") ||  FineDocBn.getGov_id().equals("0068")   ||  FineDocBn.getGov_id().equals("0069")   ||  FineDocBn.getGov_id().equals("0072")  ||   FineDocBn.getGov_id().equals("0074")   ||  FineDocBn.getGov_id().equals("0075")  ||  FineDocBn.getGov_id().equals("0076")  ) { %>	
+		 <tr bgcolor="#FFFFFF" align="center">
+            <td width="10%" height="<%=line_h%>" bgcolor="#FFFFFF" style="font-size : 8pt;"><font face="¹ÙÅÁ">36°³¿ù</font></td>
+            <td width="10%" style="font-size : 8pt;"><font face="¹ÙÅÁ"><%=FineDocListBn.getCar_st()%></font></td>
+            <td width="10%" style="font-size : 8pt;" ><font face="¹ÙÅÁ"><%=Util.parseDecimal(s_amt1[0])%></font></td>
+            <td width="15%" style="font-size : 8pt;" align=right><font face="¹ÙÅÁ"><%=Util.parseDecimal(s_amt2[0])%>&nbsp;</font></td>
+            <td width="15%" style="font-size : 8pt;" align=right><font face="¹ÙÅÁ"><%=Util.parseDecimal(s_amt3[0])%>&nbsp;</font></td>
+            <td width="15%" style="font-size : 8pt;"><font face="¹ÙÅÁ"><%=FineDocListBn.getVio_dt()%></font></td>
+            <td width="15%" style="font-size : 8pt;" align=right><font face="¹ÙÅÁ"><%=Util.parseDecimal(s_amt4[0])%>&nbsp;</font></td>
+            <td width="10%" style="font-size : 8pt;"><font face="¹ÙÅÁ"><%=FineDocListBn.getScan_file()%></font></td>
+          </tr>
+ <% 	} %>     
+ 
+ <% if ( ( AddUtil.parseInt(String.valueOf(FineDocListBn.getPaid_no())) > 36 && FineDocBn.getGov_id().equals("0073")  )  ) { %>	
+		 <tr bgcolor="#FFFFFF" align="center">
+            <td width="10%" height="<%=line_h%>" bgcolor="#FFFFFF" style="font-size : 8pt;"><font face="¹ÙÅÁ">36°³¿ù</font></td>
+            <td width="10%" style="font-size : 8pt;"><font face="¹ÙÅÁ"><%=FineDocListBn.getCar_st()%></font></td>
+            <td width="10%" style="font-size : 8pt;" ><font face="¹ÙÅÁ"><%=Util.parseDecimal(s_amt1[0])%></font></td>
+            <td width="15%" style="font-size : 8pt;" align=right><font face="¹ÙÅÁ"><%=Util.parseDecimal(s_amt2[0])%>&nbsp;</font></td>
+            <td width="15%" style="font-size : 8pt;" align=right><font face="¹ÙÅÁ"><%=Util.parseDecimal(s_amt3[0])%>&nbsp;</font></td>
+            <td width="15%" style="font-size : 8pt;"><font face="¹ÙÅÁ"><%=FineDocListBn.getVio_dt()%></font></td>
+            <td width="15%" style="font-size : 8pt;" align=right><font face="¹ÙÅÁ"><%=Util.parseDecimal(s_amt4[0])%>&nbsp;</font></td>
+            <td width="10%" style="font-size : 8pt;"><font face="¹ÙÅÁ"><%=FineDocListBn.getScan_file()%></font></td>
+          </tr>
+ <% 	} %>    
+    
+         <tr bgcolor="#FFFFFF" align="center">
+            <td colspan=2 height="<%=line_h%>" bgcolor="#FFFFFF" style="font-size : 8pt;"><font face="¹ÙÅÁ">ÇÕ°è</font></td>
+            <td width="10%" style="font-size : 8pt;" ><font face="¹ÙÅÁ"><%=Util.parseDecimal(t_amt1[0])%></font></td>
+            <td width="15%" style="font-size : 8pt;" align=right><font face="¹ÙÅÁ"><%=Util.parseDecimal(t_amt2[0])%>&nbsp;</font></td>
+            <td width="15%" style="font-size : 8pt;" align=right><font face="¹ÙÅÁ"><%=Util.parseDecimal(t_amt3[0])%>&nbsp;</font></td>
+            <td width="15%" style="font-size : 8pt;"><font face="¹ÙÅÁ"></font></td>
+            <td width="15%" style="font-size : 8pt;" align=right><font face="¹ÙÅÁ"><%=Util.parseDecimal(t_amt4[0])%>&nbsp;</font></td>
+            <td width="10%" style="font-size : 8pt;"><font face="¹ÙÅÁ"></font></td>
+          
+          </tr>
+<%} %>
+      </table></td>
+    </tr>
+  </table>
+  <table width='670' height="<%=height%>" border="0" cellpadding="0" cellspacing="0">
+    <tr> 
+      <td colspan=2 align='center' height="20"><font face="¹ÙÅÁ">&nbsp;</font></td>
+    </tr>
+    <tr> 
+      <td colspan=2 align='right' height="20" style="font-size : 10pt;"><font face="¹ÙÅÁ">- ³¡ -</font></td>
+    </tr>
+    <tr> 
+      <td colspan=2 height="20"><font face="¹ÙÅÁ">&nbsp;</font></td>
+    </tr>
+    <tr> 
+      <td colspan=2 height="20" style="font-size : 10pt;"><font face="¹ÙÅÁ"># Ã·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        ºÎ</font></td>
+    </tr>
+    <%for(int i=0; i<app_doc_size; i++){%>
+    <tr> 
+      <td width="13%" height="20" style="font-size : 10pt;"><font face="¹ÙÅÁ">&nbsp;</font></td>
+      <td width="87%" height="20" style="font-size : 10pt;"><font face="¹ÙÅÁ"><%=i+1%>) 
+        <%if(app_doc_v.substring(i,i+1).equals("1")){%>
+        <%=var3%> 
+        <%}%>
+        <%if(app_doc_v.substring(i,i+1).equals("2")){%>
+        <%=var4%> 
+        <%}%>
+        <%if(app_doc_v.substring(i,i+1).equals("3")){%>
+        <%=var5%> 
+        <%}%>
+        <%if(app_doc_v.substring(i,i+1).equals("4")){%>
+        <%=var6%> 
+        <%}%>
+        <%if(app_doc_v.substring(i,i+1).equals("5")){%>
+        <%=var7%> 
+        <%}%>
+        </font></td>
+    </tr>
+    <%}%>
+    <tr> 
+      <td colspan="2"><font face="¹ÙÅÁ">&nbsp;</font></td>
+    </tr>
+    <tr align="center"> 
+      <td height="40" colspan="2" style="font-size : 19pt;"><font face="¹ÙÅÁ"><b>ÁÖ½ÄÈ¸»ç 
+        ¾Æ¸¶Á¸Ä« ´ëÇ¥ÀÌ»ç Á¶&nbsp;&nbsp;¼º&nbsp;&nbsp;Èñ</b></font></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+ä

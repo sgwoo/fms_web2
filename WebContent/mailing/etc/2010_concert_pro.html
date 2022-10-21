@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<script language="javascript">
+<!--
+function setCookie(name,value,expiredays){
+	var todayDate=new Date();
+	todayDate.setDate(todayDate.getDate()+expiredays);
+	document.cookie=name+"="+escape(value)+";path=/;expires="+todayDate.toGMTString()+";"
+}
+function closeWin(){
+	if(document.forms[0].notice.checked)
+	setCookie("amazon","rangs",1);
+	self.close();
+}
+//-->
+</script>
+
+<TITLE>콘서트 프로그램</TITLE>
+<link href="http://www.amazoncar.co.kr/style.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY topmargin="0" leftmargin="0">
+<table width=500 border=0 cellspacing=0 cellpadding=0>
+    <tr>
+        <td height=40></td>
+    </tr>
+    <tr>
+        <td><img src=http://www.amazoncar.co.kr/mailing/etc/images/2010_con_pro.gif border=0></td>
+    </tr>
+    <tr>
+        <td height=40></td>
+    </tr>
+</table>
+
+</BODY>
+</HTML>

@@ -1,0 +1,24 @@
+body.general{ background-color:#FFFFFF; font-family: πŸ≈¡, Gulim, AppleGothic, Seoul, Arial; font-size: 9pt;}
+a:link		{ font-family: ±º∏≤, Gulim, AppleGothic, Seoul, Arial; text-decoration:underline; font-size:9pt; }
+a:hover		{ font-family: ±º∏≤, Gulim, AppleGothic, Seoul, Arial; color:red; text-decoration:underline; font-size:9pt; }
+a:visited	{ font-family: ±º∏≤, Gulim, AppleGothic, Seoul, Arial; color:blue; text-decoration:none; font-size:9pt; }
+
+input.text		{ text-align:left;  font-size : 9pt; background-color:#ffffff; border-color:#99CC66; border-width:1; }
+input.file		{ text-align:left;  font-size : 9pt; background-color:#ffffff; border-color:#99CC66; border-width:1; }
+input.num  		{ text-align:right; font-size : 9pt; background-color:#ffffff; border-color:#99CC66; border-width:1; }
+input.white     { text-align:center;font-size : 9pt; background-color:#ffffff; border-color:#ffffff; border-width:0;}
+input.whitetext	{ text-align:left;  font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.whitenum	{ text-align:right; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+
+td		    { font-family:πŸ≈¡,Gulim, AppleGothic, Seoul, Arial; font-size:9pt; color:black; }/*vertical-align:middle;*/
+td.title 	{ font-family:πŸ≈¡,Gulim, AppleGothic, Seoul, Arial; text-align:center; background-color:#CCCCCC ; font-size:9pt; color:black; vertical-align:middle; height:22;}
+td.title2 	{ font-family:πŸ≈¡,Gulim, AppleGothic, Seoul, Arial; text-align:center; background-color:#FFFFFF ; font-size:9pt; color:black; vertical-align:middle; height:22;}
+
+input.white      	{ font-size : 9pt; text-align:center; background-color:#ffffff; border-color:#ffffff; border-width:0;}
+input.whitetext		{ text-align:left; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.whitenum		{ text-align:right; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.titlenum		{ text-align:right; font-size : 9pt; background-color:#CCCCCC; border-color:#000000; border-width:0;}
+
+span.size12		{ font-family: µ∏øÚ, Gulim, AppleGothic, Seoul, Arial; font-size: 12pt;}
+span.pop		{ font-family: ±º∏≤, Gulim, AppleGothic, Seoul, Arial; background-color:#FFD5FF; font-size: 9pt; color:#800080;}
+span.search		{ font-family: ±º∏≤, Gulim, AppleGothic, Seoul, Arial; background-color:#DFEFCF; font-size: 9pt; color:#4A7025;}

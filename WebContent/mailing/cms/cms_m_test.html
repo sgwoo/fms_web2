@@ -1,0 +1,179 @@
+<%@ page language="java" contentType="text/html;charset=euc-kr"%>
+<%@ page import="java.util.*, java.io.*, acar.cont.*, acar.fee.*, acar.util.*, acar.common.*, acar.car_mst.*, tax.*, acar.user_mng.*"%>
+<jsp:useBean id="a_db" scope="session" class="acar.cont.AddContDatabase"/>
+<jsp:useBean id="f_db" scope="page" class="acar.fee.FeeDatabase"/>
+<jsp:useBean id="af_db" scope="page" class="acar.fee.AddFeeDatabase"/>
+<jsp:useBean id="ScdMngDb" scope="page" class="tax.ScdMngDatabase"/>
+
+<%
+	String m_id 	= request.getParameter("m_id")==null?"002316":request.getParameter("m_id");
+	String l_cd 	= request.getParameter("l_cd")==null?"S105YNCL00040":request.getParameter("l_cd");
+	String rent_st 	= request.getParameter("rent_st")==null?"1":request.getParameter("rent_st");
+	
+	CommonDataBase c_db = CommonDataBase.getInstance();
+	
+	//cont_view
+	Hashtable base = a_db.getContViewCase(m_id, l_cd);
+	//자동이체정보
+	ContCmsBean cms = a_db.getCmsMng(m_id, l_cd);
+	//대여갯수 카운터
+	int fee_count = af_db.getFeeCount(l_cd);
+	//출고전대차 조회
+	ContTaechaBean taecha = a_db.getContTaechaCase(m_id, l_cd);
+	
+	//대여기본정보
+	ContFeeBean fee = a_db.getContFee(m_id, l_cd, rent_st);
+	
+	Vector fee_scd = new Vector();
+	int fee_scd_size = 0;
+	//건별 대여료 스케줄 리스트
+	if(rent_st.equals("")){
+		fee_scd = af_db.getFeeScd(l_cd);
+		fee_scd_size = fee_scd.size();
+	}else{
+		fee_scd = af_db.getFeeScdRentst(l_cd, rent_st, fee.getPrv_mon_yn());
+		fee_scd_size = fee_scd.size();
+	}
+	//담당자정보
+	UserMngDatabase u_db = UserMngDatabase.getInstance();
+	UsersBean b_user = u_db.getUsersBean(String.valueOf(base.get("BUS_ID2")));
+	UsersBean h_user = u_db.getUsersBean("000042");
+	
+	//계좌번호 *로 가리기
+	int acc_len = cms.getCms_acc_no().length();
+	String acc_no = "";
+	String acc_no1 = "";
+	String acc_no2 = "";
+	if(acc_len > 0){
+		acc_no1 = cms.getCms_acc_no().substring(0,cms.getCms_acc_no().lastIndexOf("-"));
+		acc_no2 = cms.getCms_acc_no().substring(cms.getCms_acc_no().lastIndexOf("-"));
+		
+    	for (int i = 0; i < acc_no1.length(); i++){
+    		char c = (char) acc_no1.charAt(i);
+    		if ( c == '-') 
+    			acc_no += "-";
+    		else 
+    			acc_no += "*";
+    	}
+		acc_no += acc_no+acc_no2;
+	}
+%>
+
+
+<html>
+<head>
+<meta http-equiv=Content-Type content=text/html; charset=euc-kr>
+<title>CMS변경사항안내</title>
+<style type="text/css">
+<!--
+.style1 {color: #88b228}
+.style2 {color: #747474}
+.style3 {color: #ffffff}
+.style4 {color: #707166; font-weight: bold;}
+.style5 {color: #e86e1b}
+.style6 {color: #385c9d; font-weight: bold;}
+.style7 {color: #77786b}
+.style8 {color: #e60011}
+.style9 {color: #707166; font-weight: bold;}
+.style10 {color: #454545; font-size:8pt;}
+.style11 {color: #6b930f; font-size:8pt;}
+.style12 {color: #77786b; font-size:8pt;}
+.style14 {color: #af2f98; font-size:8pt;}
+.style15 {color: #334ec5;}
+-->
+</style>
+<link href=http://www.amazoncar.co.kr/style.css rel=stylesheet type=text/css>
+</head>
+<body topmargin=0 leftmargin=0>
+<table width=700 border=0 cellspacing=0 cellpadding=0 align=center>
+    <tr>
+        <td>
+            <table width=700 border=0 cellspacing=0 cellpadding=0>
+                <tr>
+                    <td width=22>&nbsp;</td>
+                    <td width=558><a href=http://www.amazoncar.co.kr target=_blank onFocus=this.blur();><img src=../images/logo.gif width=332 height=52 border=0></a></td>
+            		<!-- 고객 FMS로그인 버튼 -->
+                    <td width=114 valign=baseline><a href=http://fms.amazoncar.co.kr/service/index.jsp target=_blank onFocus=this.blur();><img src=../images/button_fms_login.gif border=0></a></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td height=7></td>
+    </tr>
+    <tr>
+        <td><img src=../images/layout_top.gif width=700 height=21></td>
+    </tr>
+    <tr>
+        <td background=../images/layout_bg.gif>
+    		<!-- 날짜 -->
+            <table width=700 border=0 cellspacing=0 cellpadding=0>
+                <tr>
+                    <td width=450>&nbsp;&nbsp;&nbsp;&nbsp;<img src=../images/ment_02.gif width=414 height=12></td>
+                    <td width=250 align=right><span class=style2><b><%= AddUtil.getDate() %></b></span>&nbsp;&nbsp;&nbsp;</td>
+                </tr> 
+            </table>
+    <!-- 날짜 -->
+        </td>
+    </tr>
+    <tr>
+        <td height=5 background=../images/layout_bg.gif></td>
+    </tr>
+    <tr>
+        <td align=center background=../images/layout_bg.gif>
+            <table width=677 border=0 cellspacing=0 cellpadding=0>
+                <tr>
+                    <td><img src=http://fms2.amazoncar.co.kr/mailing/images/cms_m.jpg></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+                    
+    <tr>
+        <td height=30 background=../images/layout_bg.gif></td>
+    </tr>
+    <!--
+    <tr>
+        <td align=center background=../images/layout_bg.gif><img src=../images/line.gif width=667 height=1></td>
+    </tr>
+    <tr>
+        <td height=20 background=../images/layout_bg.gif></td>
+    </tr>
+    <tr>
+        <td align=center background=../images/layout_bg.gif><span class=style12>본 메일은 발신전용 메일이므로 궁금한 사항은 <a href=mailto:tax@amazoncar.co.kr><span class=style14>수신메일(tax@amazoncar.co.kr)</span></a>로 보내주시기 바랍니다.</span></td>
+    </tr>
+    <tr>
+        <td height=20 background=../images/layout_bg.gif></td>
+    </tr>-->
+    <tr>
+        <td align=center background=../images/layout_bg.gif><img src=../images/line.gif width=667 height=1></td>
+    </tr>
+    <tr>
+        <td height=20 background=../images/layout_bg.gif>&nbsp;</td>
+    </tr>
+    <tr>
+        <td background=../images/layout_bg.gif>
+            <table width=700 border=0 cellspacing=0 cellpadding=0>
+                <tr>
+                    <td width=35>&nbsp;</td>
+                    <td width=112><img src=http://fms1.amazoncar.co.kr/acar/images/logo_1.png></td>
+                    <td width=28>&nbsp;</td>
+                    <td width=1 bgcolor=dbdbdb></td>
+                    <td width=32>&nbsp;</td>
+                    <td width=493><img src=../images/bottom_esti_right.gif border=0></td>
+                </tr>
+                <map name=Map1>
+                    <area shape=rect coords=283,53,403,67 href=mailto:tax@amazoncar.co.kr>
+                </map>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td height=10 background=../images/layout_bg.gif></td>
+    </tr>
+    <tr>
+        <td><img src=../images/layout_bottom.gif width=700 height=21></td>
+    </tr>
+</table>
+</body>
+</html>

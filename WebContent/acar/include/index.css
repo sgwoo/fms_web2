@@ -1,0 +1,96 @@
+body, td {
+font-family: "±¼¸², Gulim, AppleGothic, Seoul, Arial";
+ color: #000000;
+ text-decoration: none;
+ font-size: 9pt;
+ line-height: 13pt;
+} 
+  
+  
+  a:link { text-decoration: none; font-size: 9pt; color:#737373; line-height: 14pt;}
+  a:visited { text-decoration: none; font-size: 9pt; color:#737373; line-height: 14pt;}
+  a:hover { color:#33AAF7; text-decoration: none; font-size: 9pt; line-height: 14pt;}
+  
+  a.edu:link { text-decoration: none; font-size: 9pt; color:#537C98; line-height: 14pt;}
+  a.edu:visited { text-decoration: none; font-size: 9pt; color:#537C98; line-height: 14pt;}
+  a.edu:hover { color:#6DB64C; text-decoration: none; font-size: 9pt; line-height: 14pt;}
+
+  a.topme:link { text-decoration: none; font-size: 9pt; color:#666666; line-height: 14pt;}
+  a.topme:visited { text-decoration: none; font-size: 9pt; color:#666666; line-height: 14pt;}
+  a.topme:hover { color:#33AAF7; text-decoration: none; font-size: 9pt; line-height: 14pt;}
+ 
+  td.hot { font-family: "Verdana, ±¼¸², µ¸¿ò"; color: #000000; text-decoration: none; font-size: 9pt; line-height: 14pt;
+           background-color:#EBF6E7; }
+  td.ti { font-family : "±¼¸², µ¸¿ò, Verdana"; color:#444444; font-size: 9pt; font-weight:bold; line-height: 14pt;}	
+  td.cap { font-family : "±¼¸², µ¸¿ò, Verdana"; color:#0072BC; font-size: 9pt; line-height: 14pt;}		   
+
+  a.copy:link { text-decoration: none; font-family: "±¼¸², µ¸¿ò"; font-size: 9pt; color:#705A8E; line-height: 14pt;}
+  a.copy:visited { text-decoration: none; font-family: "±¼¸², µ¸¿ò"; font-size: 9pt; color:#705A8E; line-height: 14pt;}
+  a.copy:hover { font-family: "±¼¸², µ¸¿ò"; color:#DA5E78; text-decoration: none; font-size: 9pt; line-height: 14pt;}
+  
+  B.sub { font:9pt µ¸¿ò; color:#666666;font-weight:bold;};
+  B.b { font:10pt ±¼¸², µ¸¿ò; color:#8E8E8E;font-weight:bold;};
+  B.c { font:9pt ±¼¸², µ¸¿ò; color:#CB5555;font-weight:bold;};
+  B.d { font:9pt ±¼¸², µ¸¿ò; color:#666666; line-height: 14pt;};
+  B.f { font:9pt ±¼¸², µ¸¿ò; color:#33AAF7; line-height: 14pt;};
+  B.g { font:9pt ±¼¸², µ¸¿ò; color:#737373; line-height: 14pt;};
+  B.h { font:9pt ±¼¸², µ¸¿ò; color:#705A8E; line-height: 14pt;};
+ B.edu { font:9pt ±¼¸², µ¸¿ò; color:#666666; line-height: 14pt;};
+  
+
+
+
+#sm01 {
+		position:absolute; left:210px; top:41px; width:301px; height:21px; z-index:1; visibility: hidden
+	}
+#sm02 {
+		position:absolute; left:290px; top:41px; width:224px; height:21px; z-index:3; visibility: hidden
+	}
+#sm03 {
+		 position:absolute; left:330px; top:41px; width:230px; height:21px; z-index:5; visibility: hidden
+	}
+#sm04 {
+		  position:absolute; left:270px; top:41px; width:285px; height:21px; z-index:7; visibility: hidden
+	}
+#sm05 {
+		  position:absolute; left:418px; top:41px; width:236px; height:21px; z-index:9; visibility: hidden
+	}
+
+    
+#m01 {
+		    position:absolute; left:168px; top:15px; width:110px; height:26px; z-index:2; visibility: hidden
+	}	
+#m02 {
+		    position:absolute; left:278px; top:15px; width:36px; height:26px; z-index:4; visibility: hidden
+	}
+#m03 {
+		    position:absolute; left:314px; top:15px; width:150px; height:26px; z-index:6; visibility: hidden
+	}
+#m04 {
+		    position:absolute; left:464px; top:15px; width:107px; height:26px; z-index:8; visibility: hidden
+	}
+#m05 {
+		    position:absolute; left:567px; top:15px; width:83px; height:26px; z-index:10; visibility: hidden
+	}
+
+input.text      	{ font-size : 9pt; text-align:left; background-color:#ffffff; border-color:#000000; border-width:1; }
+input.text_ce      	{ font-size : 9pt; text-align:center; background-color:#ffffff; border-color:#000000; border-width:1; }
+input.white      	{ font-size : 9pt; text-align:center; background-color:#ffffff; border-color:#ffffff; border-width:0;}
+input.t_color      	{ font-size : 9pt; text-align:center;background-color:#E7EFFF; border-color:#ffffff; border-width:0;}
+input.dont      	{ font-size : 9pt; text-align:left; background-color:#E7EFFF; border-color:#000000; border-width:0; width:45px; height:20;}
+input.is      		{ font-size : 9pt; text-align:left; background-color:#ffffff; border-color:#000000; border-width:0; width:45px;  height:20;}
+input.num			{ text-align:right; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:1; }
+input.isnum			{ text-align:right; font-size : 9pt; background-color:#ffffe8; border-color:#000000; border-width:0;}
+input.isnumsee		{ text-align:right; font-size : 9pt; background-color:#ffffe8; border-color:#000000; border-width:1;}
+input.istext		{ font-size : 9pt; text-align:center; background-color:#ffffe8; border-color:#000000; border-width:0;}
+input.whitetext		{ text-align:left; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.whitenum		{ text-align:right; font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:0; }
+input.blank			{ text-align:left; background-color:#6784ba; border-color:#000000; border-width:0; color:white; font-size: 9pt;}
+input.whiteblank	{ text-align:left; background-color:#ffffff; border-color:#000000; border-width:0; color:white; font-size: 9pt;}
+input.blanknum		{ text-align:right; background-color:#6784ba; border-color:#000000; border-width:0; color:white; font-size: 9pt;}
+
+select      { font-size : 9pt;}
+option      { font-size : 9pt;}
+textarea      { font-size : 9pt; background-color:#ffffff; border-color:#000000; border-width:1; }
+
+

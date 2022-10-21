@@ -1,0 +1,24 @@
+/* body 공통 속성 */ 
+body,div,ul,li,dl,dt,dd,ol,p,h1,h2,h3,h4,h5,h6,form {margin:0;padding:0}
+body {font-family:NanumGothic, '나눔고딕'; }
+ul,ol,dl {list-style:none}
+img {border:0;vertical-align:top;}
+ul {list-style:none; padding:0; margin:0; text-align:center;}
+
+/* 레이아웃 큰박스 속성 */
+#wrap {float:left; margin:0 auto; width:100%; background-color:#301a37;}
+#header {float:left; width:100%; height:43px; margin-bottom:30px;}
+#contents {float:left; width:100%;}
+#footer {float:left; width:100%; height:50px; background:#CCC; margin-top:20px;}
+
+/* 메뉴아이콘들 */
+#gnb_menu a{text-decoration:none; color:#fff; display:block; padding-bottom:10px;}
+#gnb_menu ul{float:left; margin:0 0 190px 10px;}
+#gnb_menu ul li{width:100px; float:left; font-size:0.80em; font-weight:bold; height:130px;}
+
+/* 로고 */
+#gnb_box {float:left; text-align:middle;  text-shadow:1px 1px 1px #000;  width:100%; height:40px;  background:url(/smart/images/top_bg.gif);}
+#gnb_home {float:right; padding:7px 15px 0 15px; valign:middle;}
+#gnb_login {float:left; height:34px; padding:11px 0 0 15px; color:#fff; font-weight:bold; text-shadow:1px 1px 1px #000;}
+#gnb_login a{text-decoration:none; color:#fff;}
+#gnb_right{float:right;}

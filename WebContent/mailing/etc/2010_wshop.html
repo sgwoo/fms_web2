@@ -1,0 +1,119 @@
+<%@ page language="java" contentType="text/html;charset=euc-kr"%>
+<%@ page import="java.util.*, java.io.*, acar.cont.*, acar.fee.*, acar.util.*, acar.common.*, acar.car_mst.*, tax.*, acar.user_mng.*"%>
+
+<html>
+<head>
+<meta http-equiv=Content-Type content=text/html; charset=euc-kr>
+<title>2010년 상반기 아마존카 워크샵 휴무안내</title>
+<style type="text/css">
+<!--
+.style1 {color: #88b228}
+.style2 {color: #747474}
+.style3 {color: #ffffff}
+.style4 {color: #707166; font-weight: bold;}
+.style5 {color: #e86e1b}
+.style6 {color: #385c9d; font-weight: bold;}
+.style7 {color: #77786b}
+.style8 {color: #e60011}
+.style9 {color: #707166; font-weight: bold;}
+.style10 {color: #454545; font-size:8pt;}
+.style11 {color: #6b930f; font-size:8pt;}
+.style12 {color: #77786b; font-size:8pt;}
+.style14 {color: #af2f98; font-size:8pt;}
+.style15 {color: #334ec5;}
+-->
+</style>
+<link href=http://www.amazoncar.co.kr/style.css rel=stylesheet type=text/css>
+</head>
+<body topmargin=0 leftmargin=0>
+<table width=700 border=0 cellspacing=0 cellpadding=0 align=center>
+    <tr>
+        <td>
+            <table width=700 border=0 cellspacing=0 cellpadding=0>
+                <tr>
+                    <td width=22>&nbsp;</td>
+                    <td width=558><a href=http://www.amazoncar.co.kr target=_blank onFocus=this.blur();><img src=http://www.amazoncar.co.kr/mailing/images/logo.gif width=332 height=52 border=0></a></td>
+            		<!-- 고객 FMS로그인 버튼 -->
+                    <td width=114 valign=baseline>&nbsp;<!--<a href=http://fms.amazoncar.co.kr/service/index.jsp target=_blank onFocus=this.blur();><img src=http://www.amazoncar.co.kr/mailing/images/button_fms_login.gif border=0></a>--></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td height=7></td>
+    </tr>
+    <tr>
+        <td><img src=http://www.amazoncar.co.kr/mailing/images/layout_top.gif width=700 height=21></td>
+    </tr>
+    <tr>
+        <td background=http://www.amazoncar.co.kr/mailing/images/layout_bg.gif>
+    		<!-- 날짜 -->
+            <table width=700 border=0 cellspacing=0 cellpadding=0>
+                <tr>
+                    <td width=450>&nbsp;&nbsp;&nbsp;&nbsp;<img src=http://www.amazoncar.co.kr/mailing/images/ment_02.gif width=414 height=12></td>
+                    <td width=250 align=right><span class=style2><b><%= AddUtil.getDate() %></b></span>&nbsp;&nbsp;&nbsp;</td>
+                </tr> 
+            </table>
+    <!-- 날짜 -->
+        </td>
+    </tr>
+    <tr>
+        <td height=5 background=http://www.amazoncar.co.kr/mailing/images/layout_bg.gif></td>
+    </tr>
+    <tr>
+        <td align=center background=http://www.amazoncar.co.kr/mailing/images/layout_bg.gif>
+            <table width=677 border=0 cellspacing=0 cellpadding=0>
+                <tr>
+                    <td><img src=http://fms2.amazoncar.co.kr/mailing/images/2010_wshop.jpg border=0></td>
+                </tr>
+            </table>
+        </td>
+    </tr>             
+    <tr>
+        <td height=30 background=http://www.amazoncar.co.kr/mailing/images/layout_bg.gif></td>
+    </tr>
+    <!--
+    <tr>
+        <td align=center background=http://www.amazoncar.co.kr/mailing/images/layout_bg.gif><img src=http://www.amazoncar.co.kr/mailing/images/line.gif width=667 height=1></td>
+    </tr>
+    <tr>
+        <td height=20 background=http://www.amazoncar.co.kr/mailing/images/layout_bg.gif></td>
+    </tr>
+    <tr>
+        <td align=center background=http://www.amazoncar.co.kr/mailing/images/layout_bg.gif><span class=style12>본 메일은 발신전용 메일이므로 궁금한 사항은 <a href=mailto:tax@amazoncar.co.kr><span class=style14>수신메일(tax@amazoncar.co.kr)</span></a>로 보내주시기 바랍니다.</span></td>
+    </tr>
+    <tr>
+        <td height=20 background=http://www.amazoncar.co.kr/mailing/images/layout_bg.gif></td>
+    </tr>-->
+    <tr>
+        <td align=center background=http://www.amazoncar.co.kr/mailing/images/layout_bg.gif><img src=http://www.amazoncar.co.kr/mailing/images/line.gif width=667 height=1></td>
+    </tr>
+    <tr>
+        <td height=20 background=http://www.amazoncar.co.kr/mailing/images/layout_bg.gif>&nbsp;</td>
+    </tr>
+    <tr>
+        <td background=http://www.amazoncar.co.kr/mailing/images/layout_bg.gif>
+            <table width=700 border=0 cellspacing=0 cellpadding=0>
+                <tr>
+                    <td width=35>&nbsp;</td>
+                    <td width=112><img src=http://www.amazoncar.co.kr/mailing/images/bottom_logo.gif width=111 height=39></td>
+                    <td width=28>&nbsp;</td>
+                    <td width=1 bgcolor=dbdbdb></td>
+                    <td width=32>&nbsp;</td>
+                    <td width=493><img src=http://www.amazoncar.co.kr/mailing/images/bottom_esti_right.gif border=0></td>
+                </tr>
+                <map name=Map1>
+                    <area shape=rect coords=283,53,403,67 href=mailto:tax@amazoncar.co.kr>
+                </map>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td height=10 background=http://www.amazoncar.co.kr/mailing/images/layout_bg.gif></td>
+    </tr>
+    <tr>
+        <td><img src=http://www.amazoncar.co.kr/mailing/images/layout_bottom.gif width=700 height=21></td>
+    </tr>
+</table>
+</body>
+</html>

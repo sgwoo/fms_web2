@@ -1,0 +1,68 @@
+/* body °øÅë ¼Ó¼º */ 
+body,div,ul,li,dl,dt,dd,ol,p,h1,h2,h3,h4,h5,h6,form {margin:0;padding:0}
+body {font-family:NanumGothic, '³ª´®°íµñ';}
+ul,ol,dl {list-style:none}
+img {border:0;vertical-align:top;}
+ul {list-style:none; padding:0; margin:0;}
+
+/* ·¹ÀÌ¾Æ¿ô Å«¹Ú½º ¼Ó¼º */
+#wrap {float:left; margin:0 auto; width:100%; background-color:#322719;}
+#header {float:left; width:100%; height:43px; margin-bottom:10px;}
+#contents {float:left; width:100%; padding:30px 0;}
+#footer {float:left; width:100%; height:50px; background:#C3C3C3; margin-top:20px;}
+
+/* ¸Þ´º¾ÆÀÌÄÜµé */
+#gnb_menu {float:left; width:100%; height:100px; margin-left:8px;}
+#gnb_menu a{text-decoration:none; color:#fff;}
+#gnb_menu li{float:left; display:inline; height:100px;}
+
+/* ·Î°í */
+#gnb_box {float:left; text-align:middle; width:100%; height:40px;  background:url(/smart/images/top_bg.gif);}
+#gnb_home {float:right; padding:7px 15px 0 15px; valign:middle;}
+#gnb_login {float:left; height:34px; padding:11px 0 0 15px; color:#fff; font-weight:bold; text-shadow:1px 1px 1px #000;}
+#gnb_login a{text-decoration:none; color:#fff;}
+#gnb_right{float:right;}
+
+/* °Ë»öÃ¢ */
+#search fieldset {padding:0px 0px; border:0px solid #000; font-family:'³ª´®°íµñ',Dotum;font-size:14px; color:#000;}
+#search .userform {width:100%; overflow:hidden; position:relative;}
+#search .userform .name {float:left; position:absolute; width:100px; margin:5px 20px 0 20px; color:#ffe4a9;}
+#search .userform .userinput {padding-right:60px; height:30px; margin:0 20px 0 85px;}
+#search .userform .userinput input.text {border:1px solid #c9c9c9; width:100%; height:23px; font-weight:bold; font-size:0.95em; vertical-align:top;}
+#search .userform .submit {float:left; position:absolute; right:0; top:0; padding-right:25px;}
+
+/* ¸®½ºÆ® */
+.search_list {width:100%; text-align:center; border-bottom:2px solid #b0baec; border-collapse:collapse;}
+.search_list caption {display:none;}
+.search_list th {padding:7px 0 4px 0; background-color:#e2e7ff; border-top:2px solid #b0baec; border-left:1px solid #b0baec; border-right:1px solid #b0baec; border-bottom:1px solid #b0baec; font-size:14px; font-family:NanumGothic, '³ª´®°íµñ'; font-weight:bold; color:#666666;}
+.search_list td {padding:6px 0 4px 0; border:1px solid #b0baec; color:#4C4C4C#  font-size:14px; font-family:NanumGothic, '³ª´®°íµñ';}
+
+/* UI Object */
+
+.srch{width:100%;padding:5px 0}
+.srch legend{overflow:hidden;visibility:hidden;position:absolute;top:0;left:0;width:1px;height:1px;font-size:0;line-height:0}
+.srch{color:#c4c4c4;text-align:center}
+.srch select,.srch input{margin:-1px 0 1px;font-size:12px;color:#373737;vertical-align:middle}
+.srch .keyword{margin-left:1px;padding:2px 3px 5px;border:1px solid #b5b5b5;font-size:12px;line-height:15px}
+/* //UI Object */
+
+
+/* UI Object */
+.lst_type{width:auto;padding:20px;border:0px solid #c2c2c2;list-style:none; background-color:#ffffff; font-family:'³ª´®°íµñ',Dotum;font-size:14px;}
+.lst_type li{margin-bottom:5px;font-family:'³ª´®°íµñ',Dotum;font-size:14px;font-weight:normal;line-height:14px;vertical-align:top}
+.lst_type li a{color:#1478CD;text-decoration:none;font-family:'³ª´®°íµñ',Dotum;font-size:20px;font-weight:normal;line-height:30px;display:inline;} /*¸µÅ©*/
+.lst_type li em{color:#f84e12}
+.lst_type li a:hover{text-decoration:underline}
+/* //UI Object */
+
+#dj_list table{margin:auto;width:98%; text-align:center; border-bottom:2px solid #c18d44; border-top:1px solid #c18d44; font:11px Tahoma;}
+#dj_list table th{padding:7px 0 4px 0;  border-top:1px solid #c18d44; border-right:1px solid #c18d44; font:12px NanumGothic; font-weight:bold; color:#f09310; height:30px;}
+#dj_list table td{padding:6px 0 4px 0; border-top:1px solid #c18d44;  font:12px NanumGothic; color:#e4ddd4; font-weight:bold; height:30px ; background-color:#322719;}
+#dj_list table a{color:#e4ddd4;}
+#dj_list table th.n{border-right:0px;}
+#dj_list table td.c{color:#d3f010; font:12px NanumGothic;}
+#dj_list table td.c a{color:#d3f010; font:12px NanumGothic;}
+
+
+.ment{font-size:0.7em; color:#ffffff; padding:5px 25px 30px 25px; line-height:17px;}
+.stylec{color:d3f010; font:16px NanumGothic;}

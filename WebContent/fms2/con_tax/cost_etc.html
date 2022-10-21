@@ -1,0 +1,81 @@
+
+
+
+<html>
+<head>
+
+<title>FMS</title>
+<meta http-equiv="content-type" content="text/html; charset=euc-kr">
+<link rel="stylesheet" type="text/css" href="../../include/table_t.css">
+<script language='JavaScript' src='/include/common.js'></script>
+<script language="JavaScript">
+<!--
+	
+//-->
+</script>
+</head>
+<body  onLoad="self.focus()">
+<center>
+<form action="./user_null_ui.jsp" name="form1" method="POST" >
+  <input type="hidden" name="auth_rw" value="<%=auth_rw%>">
+  <input type="hidden" name="user_id" value="<%=user_id%>">  
+  <input type="hidden" name="bgubun" value="<%=bgubun%>">  
+  <input type="hidden" name="cmd" value="">
+  <table border=0 cellspacing=0 cellpadding=0 width=500>
+  	<tr>
+		<td colspan=3>
+			<table width=100% border=0 cellpadding=0 cellspacing=0>
+				<tr>
+					<td width=7><img src=/acar/images/center/menu_bar_1.gif width=7 height=33></td>
+					<td class=bar>&nbsp;&nbsp;&nbsp;<img src=/acar/images/center/menu_bar_dot.gif width=4 height=5 align=absmiddle>&nbsp;
+						<span class=style1>현황 및 통계 > FMS운영관리 > <span class=style5>계산방법</span></span></td>
+					<td width=7><img src=/acar/images/center/menu_bar_2.gif width=7 height=33></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr><td class=h></td></tr>  
+	<tr>
+	    <td class=line2></td>
+	</tr>
+	<tr>
+	      <td class=line>
+	        <table border="0" cellspacing="1" width=500>
+	            <tr>
+				  <td> 비용인정: 최대 1,000만원, 감가상각비(상당액): 최대 800만원 </td>             
+	           </tr>
+	            <tr>
+				  <td> 업무사용비율 : 1,000만원 / 관련비용합계  </td>             
+	           </tr>
+	            <tr>
+				  <td> 1,000 만원 비용 초과시 업무사용비율 적용하여 계산 </td>             
+	           </tr>
+	            <tr>
+				  <td> 업무용승용차관련비영 합계: 감가상각상닥액+유류비+보험료+수선비+자동차세+기타</td>             
+	           </tr>
+	            <tr>
+				  <td> 감가상각비(상당액) 한도초과금액 : 업무사용금액의 감가상각비(상당액이 800만원 초과금액)</td>             
+	           </tr>
+	            <tr>
+				  <td> 손금 불산입합계: 업무외사용금액 + 감가상각비(상당액) 한도초과금액</td>             
+	           </tr>
+	         </table>
+	       </td>    
+          </tr>
+          
+          <tr>
+		<td align='right' width=400>
+		
+			<a href="javascript:self.close();window.close();"><img src=/acar/images/center/button_close.gif border=0 align=absmiddle></a> 
+		</td>
+		<td width=50>
+		</td>
+	</tr>
+	
+  </table>
+</form>
+
+</center>
+
+</body>
+</html>
